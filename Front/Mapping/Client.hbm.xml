@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="Front" namespace="Front.Model" default-lazy="false">
+  <class name="Client" table="client">
+    <id name="Id">
+      <column name="id" sql-type="char(32)" not-null="true"/>
+      <generator class="uuid.hex"/>
+    </id>
+    <property name="Username" column="username" not-null="true"/>
+    <property name="Password" column="password" not-null="true"/>
+    <property name="Salt" column="salt" not-null="true"/>
+    <property name="RealName" column="realname" not-null ="true"/>
+    <property name="Role" column="role" not-null="true"/>
+    <property name="Department" column="department" not-null="true"/>
+
+
+  </class>
+</hibernate-mapping>
