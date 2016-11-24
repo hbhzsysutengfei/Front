@@ -22,39 +22,60 @@ namespace InitWebServer
 
         private void buttonInit_Click(object sender, EventArgs e)
         {
-            //initRoles();
-            //initAdminClient();
+            initRoles();
+            initDepartment();
+            initAdminClient();
 
         }
-
-        public void initAdminClient()
-        {
-            Client client = new Client();
-            client.Username = "admin";
-            client.Password = "123456";
-            client.RealName = "yangtf";
-            client.Role = "superadmin";
-            client.Department = "K6";
-            client.encryptPassword();
-            ClientDao dao = new ClientDao();
-            dao.save(client);
-        }
-
         private void initRoles()
         {
-            Role[] roles = createRoles();
+            RoleEntity[] roles = createRoles();
             RoleDao dao = new RoleDao();
             dao.save(roles);
         }
 
-        private Role[] createRoles()
+        public void initDepartment()
         {
-            Role[] roles = new Role[3];
-            roles[0] = new Role("superadmin", "超级管理员"); // 只有一个
-            roles[1] = new Role("admin", "管理员");// 每个科室的管理员
-            roles[2] = new Role("client", "用户");// 普通用户，发帖
-            return roles;
+            string[] departmentNames = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18" };
+            string[] departmentDescriptions = { "一科", "二科", "三科", "四科", "五科", "六科", "七科", "八科", "九科", "十科",                                
+                                                  "十一科", "十二科", "十三科" , "十四科", "十五科","秘书科", "政工科", "行政科"};
+            DepartmentEntity[] departments = new DepartmentEntity[18];
+            for (int index = 0; index < departmentNames.Length; index++)
+            {
+                departments[index] = new DepartmentEntity(departmentNames[index], departmentDescriptions[index]);
+            }
 
+            DepartmentDao dao = new DepartmentDao();
+            dao.save(departments);
         }
+
+        public void initAdminClient()
+        {
+            ClientEntity client = new ClientEntity();
+            RoleDao roleDao = new RoleDao();
+            DepartmentDao departmentDao = new DepartmentDao();
+            client.Username = "admin";
+            client.Password = "123456";
+            client.RealName = "yangtf";
+
+            client.Role = roleDao.getByName("superadmin");
+            client.Department = departmentDao.getByName("6");
+            client.encryptPassword();
+
+            ClientDao dao = new ClientDao();
+            dao.save(client);
+        }
+
+       
+
+        private RoleEntity[] createRoles()
+        {
+            RoleEntity[] roles = new RoleEntity[3];
+            roles[0] = new RoleEntity("superadmin", "超级管理员"); // 只有一个
+            roles[1] = new RoleEntity("admin", "管理员");// 每个科室的管理员
+            roles[2] = new RoleEntity("client", "用户");// 普通用户，发帖
+            return roles;
+        }
+
     }
 }

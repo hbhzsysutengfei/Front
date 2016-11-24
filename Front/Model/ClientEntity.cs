@@ -6,9 +6,9 @@ using System.Web;
 
 namespace Front.Model
 {
-    public class Client
+    public class ClientEntity:Entity
     {
-        public Client()
+        public ClientEntity()
         {
 
         }
@@ -24,9 +24,9 @@ namespace Front.Model
 
         public virtual string RealName { get; set; }
 
-        public virtual string Role { get; set; }
+        public virtual RoleEntity Role { get; set; }
 
-        public virtual string Department { get; set; }
+        public virtual DepartmentEntity Department { get; set; }
 
         
 
@@ -42,8 +42,8 @@ namespace Front.Model
 
         public override string ToString()
         {
-            return Id +"#username:" +Username +"#password:"+ Password + "#salt:"+ Salt +"#realname:"+ RealName+"#role" + Role + "#department:"+Department;
-
+            //return Id +"#username:" +Username +"#password:"+ Password + "#salt:"+ Salt +"#realname:"+ RealName+"#role" + Role + "#department:"+Department;
+            return "#username:" + Username;
         }
 
         public Boolean validClient()
@@ -56,7 +56,8 @@ namespace Front.Model
             //{
             //    return false;
             //}
-            return EncryptDecryptHelper.encryptString("123456", Salt).Equals(Password);
+            //return EncryptDecryptHelper.encryptString("123456", Salt).Equals(Password);
+            return true;
         }
         
     }

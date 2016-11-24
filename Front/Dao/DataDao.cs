@@ -11,15 +11,26 @@ namespace Front.Dao
     {
         protected ISession session;
 
+        public DataDao()
+        {
+            session = NHibernateHelper.getSession();
+        }
 
-        //public  void BatchSave<T>(List<T>[] records)
-        //{
-        //    IStatelessSession session = NHibernateHelper.getStatelessSession();
-        //    ITransaction tx = session.BeginTransaction();
-            
-        //    tx.Commit();
-        //    session.Close();
-        //}
+        public DataDao(ISession session)
+        {
+            this.session = session;
+        }
+
+        public void closeDaoSession()
+        {
+            if (session != null)
+            {
+                session.Close();
+            }
+        }
+
+
+        
 
       
 

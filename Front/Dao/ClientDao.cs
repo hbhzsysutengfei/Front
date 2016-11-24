@@ -10,18 +10,18 @@ namespace Front.Dao
 {
     public class ClientDao:DataDao
     {
-        public void save(Client client)
-        {
-            ISession session = NHibernateHelper.getSession();
+        public ClientDao() { }
+
+        public void save(ClientEntity client)
+        {            
             ITransaction tx =  session.BeginTransaction();
             session.Save(client);
             tx.Commit();
             session.Close();
         }
 
-        public void save(Client[] clients)
-        {
-            ISession session = NHibernateHelper.getSession();
+        public void save(ClientEntity[] clients)
+        {           
             ITransaction tx = session.BeginTransaction();
             foreach (var client in clients)
             {
@@ -33,12 +33,12 @@ namespace Front.Dao
 
         
 
-        public Client getClientByUsername(String username)
-        {
-            ISession session = NHibernateHelper.getSession();
-            return session.QueryOver<Client>().Where(c => c.Username == username).SingleOrDefault();
+        public ClientEntity getClientByUsername(String username)
+        {           
+            return session.QueryOver<ClientEntity>().Where(c => c.Username == username).SingleOrDefault();
         }
-        public Boolean validClient(Client clientFromDatabase, String password)
+
+        public Boolean validClient(ClientEntity clientFromDatabase, String password)
         {
             return EncryptDecryptHelper.encryptString(password, clientFromDatabase.Salt).Equals(clientFromDatabase.Password);
         }
@@ -46,7 +46,7 @@ namespace Front.Dao
 
         public String resetPassword(String username)
         {
-            Client client = getClientByUsername(username);
+            ClientEntity client = getClientByUsername(username);
             if (client != null)
             {
                 client.Salt = EncryptDecryptHelper.getSalt();

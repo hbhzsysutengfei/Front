@@ -13,7 +13,7 @@ namespace Front.Tests
         public void TestGetRoles()
         {
             RoleDao dao = new RoleDao();
-            IList<Role> roles = dao.getAllRoles();
+            IList<RoleEntity> roles = dao.getAllRoles();
             foreach (var role in roles)
             {
                 Console.WriteLine(role.Id +"#"+role.RoleName+"#"+role.Description);
@@ -23,12 +23,11 @@ namespace Front.Tests
         [TestMethod]
         public void TestClient()
         {
-            Client client = new Client();
+            ClientEntity client = new ClientEntity();
             client.Username = "admin";
             client.Password = "123456";
             client.RealName = "张三";
-            client.Role = "admin";
-            client.Department = "1K";
+            
 
             Console.WriteLine(client.ToString());
             client.encryptPassword();
@@ -42,7 +41,7 @@ namespace Front.Tests
         {
             ClientDao dao = new ClientDao();
 
-            Client client = dao.getClientByUsername("admin");
+            ClientEntity client = dao.getClientByUsername("admin");
             if (client != null)
             {
                 Assert.IsTrue(dao.validClient(client, "123456"));

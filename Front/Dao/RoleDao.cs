@@ -10,18 +10,21 @@ namespace Front.Dao
 {
     public class RoleDao:DataDao
     {
-        public void save(Role role)
+        public RoleDao()
         {
-            session = NHibernateHelper.getSession();
+
+        }
+
+        public void save(RoleEntity role)
+        {           
             ITransaction tx = session.BeginTransaction();            
             session.Save(role);
             tx.Commit();
             session.Close();
         }
 
-        public void save(Role[] roles)
+        public void save(RoleEntity[] roles)
         {
-            session = NHibernateHelper.getSession();
             ITransaction tx = session.BeginTransaction();
             foreach (var role in roles)
             {
@@ -32,13 +35,16 @@ namespace Front.Dao
         }
 
 
-        public IList<Role> getAllRoles()
+        public IList<RoleEntity> getAllRoles()
         {
-            session = NHibernateHelper.getSession();
-            //session.BeginTransaction();
-            IList<Role> roles = session.QueryOver<Role>().Take(10).List();
+            IList<RoleEntity> roles = session.QueryOver<RoleEntity>().Take(10).List();
             session.Close();
             return roles;
+        }
+
+        public RoleEntity getByName(String name)
+        {
+            return session.QueryOver<RoleEntity>().Where(r => r.RoleName == name).SingleOrDefault();
         }
     }
 }
