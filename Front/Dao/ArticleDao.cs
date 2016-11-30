@@ -1,4 +1,5 @@
-﻿using Front.Model;
+﻿using Front.ASPX;
+using Front.Model;
 using NHibernate;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,16 @@ namespace Front.Dao
             return session.QueryOver<ArticleEntity>().Select(a => a.Id).Where(a=>a.Author.Username == author ).Take(FETCH_MAX_COUNT).List<String>();
         }
 
+        public IList<ArticleEntity> getArticleListByCatalog(string catalog,int skip = 0)
+        {
+           IList<ArticleEntity> res =  session.QueryOver<ArticleEntity>()
+               .Where(a => a.Catalog.CatalogName == catalog)
+               .Select(a => a.Id, a => a.Title, a => a.UpdateTime).OrderBy(a =>a.UpdateTime).Desc
+                .Skip(skip * PageInfo.ArticlePerPage).Take(PageInfo.ArticlePerPage).List<object[]>()
+                .Select(props => new ArticleEntity { Id = (string)props[0], Title = props[1] as string, UpdateTime = (DateTime)props[2] ,Catalog=new CatalogEntity(catalog)})
+                .ToList<ArticleEntity>();
+           return res;
+        }
         public string save(ArticleEntity art)
         {
             ITransaction tx = session.BeginTransaction();

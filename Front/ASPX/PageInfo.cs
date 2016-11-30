@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Front.ASPX
 {
-    public class PageInfo
+    public static class PageInfo
     {
         public const string PageInfoOK = "OK";
 
@@ -23,10 +23,11 @@ namespace Front.ASPX
 
         public const string PathClientLogin = "/ASPX/Client/Login.aspx";
         public const string PathShowPage = "/Article/ShowPageMaster.aspx?articleId=";
-
+        public const string PathCatalogArticleListPage = "/Article/CatalogArticleListMaster.aspx?catalog_name=";
         public const string PathEditPage = "/Article/EditPageMaster.aspx?articleId=";
 
         public const string PathParamNameOfArticleId = "articleId";
+        public const string PathParamNameOfCatalogName = "catalog_name";
 
         public const string SessionKey_Client = "session_client";
         
@@ -43,9 +44,22 @@ namespace Front.ASPX
         public const string RoleTypeClient = "client";
 
 
+        public const int CatalogLocTop = 0;
+        public const int CatalogLocHeader = 1;
+        public const int CatalogLocNavigator = 2;
+        public const int CatalogLocContent = 3;
 
-     
+        //自己修改
+        public const int CatalogNumForMainPage = 4;
+        public const string CatalogFirst=   "审批";
+        public const string CatalogSecond = "审批1";
+        public const string CatalogThird =  "申请";
+        public const string CatalogForth =  "调研文章";
+        public static string[] CatalogForMainPage = { CatalogFirst, CatalogSecond, CatalogThird, CatalogForth };
 
+
+       
+        public const int ArticlePerPage = 6;
 
     }
 }

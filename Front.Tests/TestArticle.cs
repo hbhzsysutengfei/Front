@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Front.Model;
 using Front.Dao;
+using Front.ASPX;
 
 namespace Front.Tests
 {
@@ -87,8 +88,18 @@ namespace Front.Tests
             {
                 ArticleEntity content = dao.getById(articleId);
                 Console.WriteLine(content.Content);
+            }            
+        }
+        [TestMethod]
+        public void TestGetArticleListByCatalog()
+        {
+            ArticleDao dao = new ArticleDao();
+            IList<ArticleEntity> list =  dao.getArticleListByCatalog(PageInfo.CatalogThird);
+            foreach (var article in list)
+            {
+                Console.WriteLine(article.Id + "#" + article.Title + "#" + article.UpdateTime.ToString() +"#"+article.Catalog.CatalogName);
             }
-            
+
         }
     }
 }

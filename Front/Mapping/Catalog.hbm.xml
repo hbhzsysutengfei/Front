@@ -9,6 +9,8 @@
     <property name="CatalogName" column="catalog_name" not-null ="true" unique="true"/>
     
     
+    
+    
     <property name="CreateTime" column="create_time" type="Timestamp"  not-null="true"/>
     <property name="UpdateTime" column="update_time" type="Timestamp"  not-null="true"/>
 

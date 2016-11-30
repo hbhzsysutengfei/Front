@@ -10,6 +10,10 @@ namespace Front.Model
 
         public string CatalogName { get; set; }
 
+        //public int CatalogLoc { get; set; } //top header nav content 
+        
+
+
 
         public CatalogEntity()
         {

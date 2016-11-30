@@ -1,4 +1,5 @@
-﻿using Front.Dao;
+﻿using Front.ASPX;
+using Front.Dao;
 using Front.Model;
 using System;
 using System.Collections.Generic;
@@ -29,6 +30,27 @@ namespace Front.Service
         {
             ArticleEntity article = dao.getById(articleId);
             return article;
+        }
+
+
+        public IList<ArticleEntity> getArticleForMainPage()
+        {
+            IList<ArticleEntity> list = new List<ArticleEntity>();
+            foreach (var catalog in PageInfo.CatalogForMainPage)
+            {
+                var articleList = dao.getArticleListByCatalog(catalog);
+                foreach (var article in articleList)
+                {
+                    list.Add(article);
+                }
+            }
+            return list; 
+        }
+
+
+        public IList<ArticleEntity> getArticleByCatalogName(String catalog)
+        {
+            return dao.getArticleListByCatalog(catalog);
         }
 
        

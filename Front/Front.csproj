@@ -67,6 +67,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Article\CatalogArticleListMaster.aspx" />
     <Content Include="Article\EditPageMaster.aspx" />
     <Content Include="Article\ShowPageMaster.aspx" />
     <Content Include="ASPX\Client\ChangeClientInfo.aspx" />
@@ -356,6 +357,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Article\CatalogArticleListMaster.aspx.cs">
+      <DependentUpon>CatalogArticleListMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Article\CatalogArticleListMaster.aspx.designer.cs">
+      <DependentUpon>CatalogArticleListMaster.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Article\EditPageMaster.aspx.cs">
       <DependentUpon>EditPageMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

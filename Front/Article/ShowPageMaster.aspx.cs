@@ -25,11 +25,36 @@ namespace Front.Article
         {     
             //默认所有的文章都是可见的
             article =  new ArticleService().getById(getArticleId());
-            this.labelTitle.Text = article.Title;
-            this.labelUpdateTime.Text = article.UpdateTime.ToLocalTime().ToString();
-            this.labelAuthor.Text = article.Author.RealName;
-            this.labelCatalog.Text = article.Catalog==null?"":article.Catalog.CatalogName;
-            txtContent = article.Content; 
+            if (article == null)
+            {
+                this.labelTitle.Text = "PageNotFound";                
+                this.labelAuthor.Text = "";
+                this.labelCatalog.Text ="";
+                txtContent = "PageNotFound";
+                this.buttonDeleteArticle.Visible = false;
+                this.buttonUpdateArticle.Visible = false;
+            }
+            else
+            {
+                this.labelTitle.Text = article.Title;
+                this.labelUpdateTime.Text = article.UpdateTime.ToString();
+                this.labelAuthor.Text = article.Author.RealName;
+                this.labelCatalog.Text = article.Catalog == null ? "" : article.Catalog.CatalogName;
+                txtContent = article.Content; 
+            }
+            
+            ClientEntity client = Session[PageInfo.SessionKey_Client] as ClientEntity;
+            if (client != null)
+            {
+                this.buttonUpdateArticle.Visible = true;
+                this.buttonDeleteArticle.Visible = true;
+            }
+            else
+            {
+                this.buttonDeleteArticle.Visible = false;
+                this.buttonUpdateArticle.Visible = false;
+            }
+            
         }
 
         private string getArticleId()
@@ -75,6 +100,11 @@ namespace Front.Article
                 Response.Redirect(PageInfo.PathEditPage + articleId);
                 return;
             }
+
+        }
+
+        protected void buttonDeleteArticle_Click(object sender, EventArgs e)
+        {
 
         }
 
