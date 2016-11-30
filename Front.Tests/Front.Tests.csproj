@@ -48,6 +48,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="TestArticle.cs" />
     <Compile Include="TestEncryptDecryptHelper.cs" />
     <Compile Include="TestRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

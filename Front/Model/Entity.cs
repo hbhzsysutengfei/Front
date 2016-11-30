@@ -16,6 +16,8 @@ namespace Front.Model
         public virtual DateTime CreateTime { get; set; }
         public virtual DateTime UpdateTime { get; set; }
 
+        public virtual String PageInfo { get; set; }
+
         public virtual void updateUpdateTime()
         {
             UpdateTime = DateTime.Now;

@@ -44,7 +44,10 @@ namespace Front.Dao
 
         public RoleEntity getByName(String name)
         {
-            return session.QueryOver<RoleEntity>().Where(r => r.RoleName == name).SingleOrDefault();
+            RoleEntity role = session.QueryOver<RoleEntity>().Where(r => r.RoleName == name).SingleOrDefault();
+            session.Close();
+            return role;
+
         }
     }
 }

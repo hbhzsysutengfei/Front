@@ -22,11 +22,29 @@ namespace InitWebServer
 
         private void buttonInit_Click(object sender, EventArgs e)
         {
-            initRoles();
-            initDepartment();
+            //initRoles();
+            //initDepartment();
+
+            initCatalog();
+
             initAdminClient();
 
         }
+
+        private void initCatalog()
+        {
+            string[] catalogNames = { "调研文章","审批","申请"};
+            CatalogEntity[] catalogs = new CatalogEntity[3];
+            for (int index = 0; index < catalogNames.Length; index++)
+            {
+                catalogs[index] = new CatalogEntity(catalogNames[index]);                
+            }
+            CatalogDao dao = new CatalogDao();
+            dao.save(catalogs);
+            
+
+        }
+
         private void initRoles()
         {
             RoleEntity[] roles = createRoles();
@@ -61,6 +79,9 @@ namespace InitWebServer
             client.Role = roleDao.getByName("superadmin");
             client.Department = departmentDao.getByName("6");
             client.encryptPassword();
+
+            IList<CatalogEntity> catalogs = new CatalogDao().getAll();
+            client.Catalogs = catalogs;
 
             ClientDao dao = new ClientDao();
             dao.save(client);

@@ -10,6 +10,12 @@ namespace Front.Dao
     public class DataDao
     {
         protected ISession session;
+        protected static readonly int FETCH_MAX_COUNT;
+
+        static DataDao()
+        {
+            FETCH_MAX_COUNT = 10;
+        }
 
         public DataDao()
         {

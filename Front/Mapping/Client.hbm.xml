@@ -12,9 +12,21 @@
     <!--<property name="Role" column="role" not-null="true"/>
     <property name="Department" column="department" not-null="true"/>-->
     <many-to-one name="Role" column="rolename" class="RoleEntity" cascade="save-update" property-ref="RoleName"></many-to-one>
-    <many-to-one name="Department" column="departmentname" class="DepartmentEntity" cascade="save-update" property-ref="DepartmentName">
-    </many-to-one>
+    <many-to-one name="Department" column="departmentname" class="DepartmentEntity" cascade="save-update" property-ref="DepartmentName"></many-to-one>
 
+    <!--<list name="Phones" table="cat_phone">
+      <key column="cat_id" property-ref="Name"/>
+      <list-index />
+      <many-to-many class="PhoneEntity" column="phone_id" property-ref="Number"/>
+    </list>-->
+
+    <list name="Catalogs" table="client_catalog">
+      <key column="client_id" property-ref="Username"/>
+      <list-index/>
+      <many-to-many class="CatalogEntity" column="catalog_id" property-ref="CatalogName"/>
+    </list>
+    
+    
     <property name="CreateTime" column="create_time" type="Timestamp"  not-null="true"/>
     <property name="UpdateTime" column="update_time" type="Timestamp"  not-null="true"/>
 

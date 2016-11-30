@@ -68,6 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Article\EditPageMaster.aspx" />
+    <Content Include="Article\ShowPageMaster.aspx" />
+    <Content Include="ASPX\Client\ChangeClientInfo.aspx" />
+    <Content Include="ASPX\Client\ClientInfo.aspx" />
+    <Content Include="ASPX\Client\Login.aspx" />
     <Content Include="Default.aspx" />
     <EmbeddedResource Include="hibernate.cfg.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -321,6 +325,13 @@
     <Content Include="kindeditor\themes\simple\simple.css" />
     <EmbeddedResource Include="Mapping\Department.hbm.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Article.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mapping\Catalog.hbm.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <Content Include="MasterPage.css" />
     <Content Include="MasterPage.Master" />
@@ -352,6 +363,37 @@
     <Compile Include="Article\EditPageMaster.aspx.designer.cs">
       <DependentUpon>EditPageMaster.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Article\ShowPageMaster.aspx.cs">
+      <DependentUpon>ShowPageMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Article\ShowPageMaster.aspx.designer.cs">
+      <DependentUpon>ShowPageMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\Client\ChangeClientInfo.aspx.cs">
+      <DependentUpon>ChangeClientInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\Client\ChangeClientInfo.aspx.designer.cs">
+      <DependentUpon>ChangeClientInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\Client\ClientInfo.aspx.cs">
+      <DependentUpon>ClientInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\Client\ClientInfo.aspx.designer.cs">
+      <DependentUpon>ClientInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\PageInfo.cs" />
+    <Compile Include="ASPX\Client\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\Client\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dao\ArticleDao.cs" />
+    <Compile Include="Dao\CatalogDao.cs" />
     <Compile Include="Dao\ClientDao.cs" />
     <Compile Include="Dao\DataDao.cs" />
     <Compile Include="Dao\DepartmentDao.cs" />
@@ -370,11 +412,15 @@
     <Compile Include="MasterPage.Master.designer.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
     </Compile>
+    <Compile Include="Model\ArticleEntity.cs" />
+    <Compile Include="Model\CatalogEntity.cs" />
     <Compile Include="Model\ClientEntity.cs" />
     <Compile Include="Model\DepartmentEntity.cs" />
     <Compile Include="Model\Entity.cs" />
     <Compile Include="Model\RoleEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\ArticleService.cs" />
+    <Compile Include="Service\Client\ClientService.cs" />
     <Compile Include="Util\EncryptDecryptHelper.cs" />
     <Compile Include="Util\NHibernateHelper.cs" />
   </ItemGroup>

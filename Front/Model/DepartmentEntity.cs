@@ -19,7 +19,7 @@ namespace Front.Model
             DepartmentName = department;
             Description = description;
         }
-        public virtual string Id { get; set; }
+        
 
         public virtual string DepartmentName { get; set; }
 

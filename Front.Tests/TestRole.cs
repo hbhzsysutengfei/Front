@@ -58,7 +58,5 @@ namespace Front.Tests
             string password =  dao.resetPassword("admin");
             Console.WriteLine(password);
         }
-
-
     }
 }

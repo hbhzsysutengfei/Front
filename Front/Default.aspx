@@ -2,7 +2,7 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="content" runat="server">
+    <h1>Main Page</h1>
+    <asp:Button ID="buttonShowPage" runat="server"  OnClick="buttonShowPage_Click"/>
    
-
-
 </asp:Content>

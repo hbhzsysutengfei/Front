@@ -13,5 +13,12 @@ namespace Front
         {
 
         }
+
+        protected void buttonShowPage_Click(object sender, EventArgs e)
+        {
+           
+            Response.Redirect("/Article/ShowPageMaster.aspx?" + "articleId=200603f0314a47709d6ee1e47dbbf1aa");
+            
+        }
     }
 }

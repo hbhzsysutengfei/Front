@@ -24,7 +24,9 @@ namespace Front.Dao
 
         public DepartmentEntity getByName(string name)
         {
-            return session.QueryOver<DepartmentEntity>().Where(m => m.DepartmentName == name).SingleOrDefault();
+            DepartmentEntity department = session.QueryOver<DepartmentEntity>().Where(m => m.DepartmentName == name).SingleOrDefault();
+            session.Close();
+            return department;
         }
 
         public void save(DepartmentEntity[] departments)
@@ -35,6 +37,7 @@ namespace Front.Dao
                 session.Save(department);
             }
             tx.Commit();
+            session.Close();
         }
     }
 }

@@ -34,8 +34,9 @@ namespace Front.Dao
         
 
         public ClientEntity getClientByUsername(String username)
-        {           
-            return session.QueryOver<ClientEntity>().Where(c => c.Username == username).SingleOrDefault();
+        {
+            ClientEntity client = session.QueryOver<ClientEntity>().Where(c => c.Username == username).SingleOrDefault();
+            return client;
         }
 
         public Boolean validClient(ClientEntity clientFromDatabase, String password)
@@ -56,6 +57,14 @@ namespace Front.Dao
             }
             return null;// 
             
+        }
+
+        public void UpdateClient(ClientEntity client)
+        {
+            ITransaction tx = session.BeginTransaction();
+            session.Update(client);
+            tx.Commit();
+            session.Close();
         }
     }
 }

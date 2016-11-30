@@ -11,9 +11,7 @@ namespace Front.Model
         public ClientEntity()
         {
 
-        }
-
-        public virtual string Id { get; set; }
+        }      
 
         public virtual string Username { get; set; }
 
@@ -27,6 +25,8 @@ namespace Front.Model
         public virtual RoleEntity Role { get; set; }
 
         public virtual DepartmentEntity Department { get; set; }
+
+        public virtual IList<CatalogEntity> Catalogs { get; set; }
 
         
 
@@ -46,6 +46,25 @@ namespace Front.Model
             return "#username:" + Username;
         }
 
+        public override bool Equals(object obj)
+        {
+            if (obj == this)
+            {
+                return true;
+            }
+            ClientEntity client = obj as ClientEntity;
+            if (client != null && client.Username.Equals(Username))
+            {
+                return true;
+            }
+            return false;
+        }
+        public override int GetHashCode()
+        {
+            return Username.GetHashCode();
+        }
+
+
         public Boolean validClient()
         {
             //if (EncryptDecryptHelper.encryptString("123456", Salt).Equals(Password))
@@ -58,6 +77,13 @@ namespace Front.Model
             //}
             //return EncryptDecryptHelper.encryptString("123456", Salt).Equals(Password);
             return true;
+        }
+
+
+        public void CleanUserInfo()
+        {
+            Password = null;
+            Salt = null;
         }
         
     }
