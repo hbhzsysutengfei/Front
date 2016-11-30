@@ -47,12 +47,35 @@ namespace Front.Service
             return list; 
         }
 
+        public IList<ArticleEntity> getArticleListByCatalogAndAuthor(string author, string catalog, int pageNumber = 0, int getNumber = PageInfo.NumberOfArticleForUserPage)
+        {
+            return dao.getArticleByAuthorAndCatalog(author, catalog, pageNumber, getNumber);
+        }
 
-        public IList<ArticleEntity> getArticleByCatalogName(String catalog)
+
+
+
+        public IList<ArticleEntity> getArticleListByCatalogName(String catalog)
         {
             return dao.getArticleListByCatalog(catalog);
         }
 
-       
+
+        public IList<ArticleEntity> getArticleListByAuthor(String author, int pageNumber = 0, int getNumber = PageInfo.NumberOfArticleForUserPage)
+        {
+            return dao.getArticleListByAuthor(author, pageNumber, getNumber);
+        }
+
+        public IList<ArticleEntity> getAllArticleList(int pageNumber = 0, int getNumber = PageInfo.NumberOfArticleForUserPage)
+        {
+
+            return dao.getAllArticleList(pageNumber, getNumber);
+        }
+
+
+        public int getArticleListByAuthorForNumber(string author)
+        {
+            return dao.getArticleListByAuthorForNumber(author);
+        }
     }
 }

@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Article\CatalogArticleListMaster.aspx" />
     <Content Include="Article\EditPageMaster.aspx" />
+    <Content Include="Article\ManagementArticleMaster.aspx" />
     <Content Include="Article\ShowPageMaster.aspx" />
     <Content Include="ASPX\Client\ChangeClientInfo.aspx" />
     <Content Include="ASPX\Client\ClientInfo.aspx" />
@@ -370,6 +371,13 @@
     </Compile>
     <Compile Include="Article\EditPageMaster.aspx.designer.cs">
       <DependentUpon>EditPageMaster.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Article\ManagementArticleMaster.aspx.cs">
+      <DependentUpon>ManagementArticleMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Article\ManagementArticleMaster.aspx.designer.cs">
+      <DependentUpon>ManagementArticleMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="Article\ShowPageMaster.aspx.cs">
       <DependentUpon>ShowPageMaster.aspx</DependentUpon>

@@ -58,8 +58,11 @@ namespace Front.ASPX
         public static string[] CatalogForMainPage = { CatalogFirst, CatalogSecond, CatalogThird, CatalogForth };
 
 
-       
-        public const int ArticlePerPage = 6;
+
+        public const int NumberOfArticleForMainPage = 6;
+        public const int NumberOfArticleForUserPage = 20;
+
+        
 
     }
 }

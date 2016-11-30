@@ -27,7 +27,7 @@ namespace Front.Article
                 {
                     this.LabelCatalogName.Text = CatalogName;
                     ArticleService service = new ArticleService();
-                    IList<ArticleEntity> articles = service.getArticleByCatalogName(CatalogName);
+                    IList<ArticleEntity> articles = service.getArticleListByCatalogName(CatalogName);
                     foreach (var article in articles)
                     {
                         this.BulletedListCatalogArticleList.Items.Add(new ListItem(article.Title+"  "+ article.UpdateTime.ToString(), PageInfo.PathShowPage+article.Id));

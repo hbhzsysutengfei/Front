@@ -28,7 +28,7 @@ namespace Front.Article
                 ClientEntity client = Session[PageInfo.SessionKey_Client] as ClientEntity;
                 if (client == null)
                 {
-                    Response.Write("<script>alert('" + PageInfo.MessageBox_NotLogin + "')</script>");
+                    //Response.Write("<script>alert('" + PageInfo.MessageBox_NotLogin + "')</script>");
                     Response.Redirect(PageInfo.PathClientLogin);
                     return;
                 }
