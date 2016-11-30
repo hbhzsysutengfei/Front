@@ -12,8 +12,10 @@ namespace Front.Model
         {
 
         }      
+        
 
-        public virtual string Username { get; set; }
+
+        public virtual string Username { get; set;  }
 
         public virtual string Password { get; set; }
 

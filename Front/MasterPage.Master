@@ -6,8 +6,8 @@
         #header{
             background-color:gray;
             color:white;
-            text-align:center;
-            padding:5px
+            padding:5px;
+            font-size:20px;          
         }
         #nav{
             background-color:#eeeeee;
@@ -21,7 +21,10 @@
         #section {
             width:83%;
             float:right;
-            padding:5px;	 	 
+            padding:5px;
+            border-color:blue;
+            border-width:3px;
+            line-height:30px; 	 
         }
         #footer {
             background-color:black;
@@ -42,16 +45,11 @@
     <form id="formMasterBody" runat="server">
         <div id="header">
             <h1>Yang Header</h1>
-            <asp:LinkButton ID="linkButtonLogin" runat="server" OnClick="linkButtonLogin_Click">登录</asp:LinkButton>
-            
+            <asp:LinkButton ID="linkButtonLogin" runat="server" OnClick="linkButtonLogin_Click">登录</asp:LinkButton>            
         </div>
 
         <div id="nav">
             <asp:ContentPlaceHolder runat="server" ID="left" >
-                zhangsan<br />
-                lisi<br />
-                Wangwu<br />
-
             </asp:ContentPlaceHolder>
 
         </div>
@@ -64,7 +62,6 @@
         <div id="footer">
             Copyright Yang
         </div>
-
     </form>
 </body>
 </html>
