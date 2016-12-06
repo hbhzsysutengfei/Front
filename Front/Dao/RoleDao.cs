@@ -20,7 +20,7 @@ namespace Front.Dao
             ITransaction tx = session.BeginTransaction();            
             session.Save(role);
             tx.Commit();
-            session.Close();
+            //session.Close();
         }
 
         public void save(RoleEntity[] roles)
@@ -31,21 +31,21 @@ namespace Front.Dao
                 session.Save(role);
             }         
             tx.Commit();
-            session.Close();
+            //session.Close();
         }
 
 
         public IList<RoleEntity> getAllRoles()
         {
             IList<RoleEntity> roles = session.QueryOver<RoleEntity>().Take(10).List();
-            session.Close();
+            //session.Close();
             return roles;
         }
 
         public RoleEntity getByName(String name)
         {
             RoleEntity role = session.QueryOver<RoleEntity>().Where(r => r.RoleName == name).SingleOrDefault();
-            session.Close();
+            //session.Close();
             return role;
 
         }

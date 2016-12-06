@@ -32,7 +32,7 @@ namespace Front.Dao
             ITransaction tx = session.BeginTransaction();
             string generatedId = session.Save(art) as string;
             tx.Commit();
-            session.Close();
+            //session.Close();
             return generatedId;
 
         }
@@ -46,7 +46,7 @@ namespace Front.Dao
             ITransaction tx = session.BeginTransaction();
             session.Update(article);
             tx.Commit();
-            session.Close();
+            //session.Close();
         }
 
         
@@ -77,7 +77,8 @@ namespace Front.Dao
                     })
                 .ToList<ArticleEntity>();                
         }
-        public int getgetAllArticleListForNumber()
+
+        public int getAllArticleListForNumber()
         {
             return session.QueryOver<ArticleEntity>().RowCount();
         }
@@ -89,8 +90,9 @@ namespace Front.Dao
                .Where(a => a.Catalog.CatalogName == catalog)
                .Select(
                     a => a.Id, 
-                    a => a.Title, 
-                    a => a.UpdateTime).OrderBy(a =>a.UpdateTime).Desc
+                    a => a.Title,                  
+                    a => a.UpdateTime,
+                    a => a.Author).OrderBy(a =>a.UpdateTime).Desc
                 .Skip(pageNumber * getNumber).Take(getNumber).List<object[]>()
                 .Select(
                     props => new ArticleEntity 
@@ -98,6 +100,7 @@ namespace Front.Dao
                         Id = (string)props[0], 
                         Title = props[1] as string, 
                         UpdateTime = (DateTime)props[2] ,
+                        Author = props[3] as ClientEntity,
                         Catalog=new CatalogEntity(catalog)
                     })
                 .ToList<ArticleEntity>();
@@ -197,6 +200,13 @@ namespace Front.Dao
         {
             return session.QueryOver<ArticleEntity>().Select(a => a.Id).Where(a => a.Author.Username == author).Take(FETCH_MAX_COUNT).List<String>();
         }
-        
+
+
+        public  void DeleteArticle(string articleId)
+        {
+            ITransaction tx = session.BeginTransaction();
+            session.Delete("from ArticleEntity where Id='" + articleId +"'");
+            tx.Commit();
+        }
     }
 }

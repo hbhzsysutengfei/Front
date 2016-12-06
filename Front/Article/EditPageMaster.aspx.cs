@@ -29,13 +29,13 @@ namespace Front.Article
                 if (client == null)
                 {
                     //Response.Write("<script>alert('" + PageInfo.MessageBox_NotLogin + "')</script>");
-                    Response.Redirect(PageInfo.PathClientLogin);
+                    Response.Redirect(PageInfo.PathClientLogin + Request.Url.ToString());
                     return;
                 }
                 else if (client.Role.RoleName.Equals(PageInfo.RoleTypeClient))
                 {
                     Response.Write("<script>alert('" + PageInfo.MessageBox_NoAdministration + "')</script>");
-                    Response.Redirect("/");
+                    Response.Redirect(PageInfo.PathDefaultPage);
                     return;
                 }
                 foreach (var catalog in client.Catalogs)
@@ -55,7 +55,7 @@ namespace Front.Article
                         this.TextBoxTitle.Text = article.Title;
                         if (article.Catalog != null)
                         {
-                            this.DropDownListCatalog.SelectedIndex = 2;
+                            this.DropDownListCatalog.SelectedIndex = 0;
                         }
                     }
                     else
@@ -98,7 +98,6 @@ namespace Front.Article
             }
             else
             {
-                ///for create 
                 ArticleService service = new ArticleService();
                 ArticleEntity article = new ArticleEntity();
                 article.Content = txtContent;

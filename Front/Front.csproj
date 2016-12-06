@@ -71,8 +71,11 @@
     <Content Include="Article\EditPageMaster.aspx" />
     <Content Include="Article\ManagementArticleMaster.aspx" />
     <Content Include="Article\ShowPageMaster.aspx" />
+    <Content Include="ASPX\Client\AddClient.aspx" />
     <Content Include="ASPX\Client\ChangeClientInfo.aspx" />
+    <Content Include="ASPX\Client\ChangePassword.aspx" />
     <Content Include="ASPX\Client\ClientInfo.aspx" />
+    <Content Include="ASPX\Client\ClientList.aspx" />
     <Content Include="ASPX\Client\Login.aspx" />
     <Content Include="Default.aspx" />
     <EmbeddedResource Include="hibernate.cfg.xml">
@@ -386,6 +389,13 @@
     <Compile Include="Article\ShowPageMaster.aspx.designer.cs">
       <DependentUpon>ShowPageMaster.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ASPX\Client\AddClient.aspx.cs">
+      <DependentUpon>AddClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\Client\AddClient.aspx.designer.cs">
+      <DependentUpon>AddClient.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ASPX\Client\ChangeClientInfo.aspx.cs">
       <DependentUpon>ChangeClientInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -393,12 +403,26 @@
     <Compile Include="ASPX\Client\ChangeClientInfo.aspx.designer.cs">
       <DependentUpon>ChangeClientInfo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ASPX\Client\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\Client\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ASPX\Client\ClientInfo.aspx.cs">
       <DependentUpon>ClientInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ASPX\Client\ClientInfo.aspx.designer.cs">
       <DependentUpon>ClientInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\Client\ClientList.aspx.cs">
+      <DependentUpon>ClientList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\Client\ClientList.aspx.designer.cs">
+      <DependentUpon>ClientList.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\PageInfo.cs" />
     <Compile Include="ASPX\Client\Login.aspx.cs">
@@ -438,6 +462,7 @@
     <Compile Include="Service\ArticleService.cs" />
     <Compile Include="Service\CatalogService.cs" />
     <Compile Include="Service\Client\ClientService.cs" />
+    <Compile Include="Service\DepartmentService.cs" />
     <Compile Include="Util\EncryptDecryptHelper.cs" />
     <Compile Include="Util\NHibernateHelper.cs" />
   </ItemGroup>

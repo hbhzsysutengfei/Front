@@ -11,14 +11,10 @@ namespace Front.Model
         public ClientEntity()
         {
 
-        }      
-        
-
-
+        }
         public virtual string Username { get; set;  }
 
         public virtual string Password { get; set; }
-
        
         public virtual string Salt { get; set; }
 
@@ -29,7 +25,6 @@ namespace Front.Model
         public virtual DepartmentEntity Department { get; set; }
 
         public virtual IList<CatalogEntity> Catalogs { get; set; }
-
         
 
         public void encryptPassword()

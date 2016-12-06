@@ -10,96 +10,87 @@
 namespace Front.ASPX.Client {
     
     
-    public partial class ClientInfo {
+    public partial class ChangePassword {
         
         /// <summary>
-        /// LabelClientInfo 控件。
+        /// LabelTitle 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelClientInfo;
+        protected global::System.Web.UI.WebControls.Label LabelTitle;
         
         /// <summary>
-        /// LabelUserName 控件。
+        /// LabelMessageInfo 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelUserName;
+        protected global::System.Web.UI.WebControls.Label LabelMessageInfo;
         
         /// <summary>
-        /// LabelUserNameInfo 控件。
+        /// LabelOriginalPassword 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelUserNameInfo;
+        protected global::System.Web.UI.WebControls.Label LabelOriginalPassword;
         
         /// <summary>
-        /// LabelReaName 控件。
+        /// TextBoxOriginalPassword 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelReaName;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxOriginalPassword;
         
         /// <summary>
-        /// LabelRealNameInfo 控件。
+        /// LabelNewPassword 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRealNameInfo;
+        protected global::System.Web.UI.WebControls.Label LabelNewPassword;
         
         /// <summary>
-        /// LabelDepartment 控件。
+        /// TextBoxNewPassword 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelDepartment;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxNewPassword;
         
         /// <summary>
-        /// LabelDepartmentInfo 控件。
+        /// LabelRepeatPassword 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelDepartmentInfo;
+        protected global::System.Web.UI.WebControls.Label LabelRepeatPassword;
         
         /// <summary>
-        /// LabelCatalog 控件。
+        /// TextBoxRepeatPassword 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelCatalog;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxRepeatPassword;
         
         /// <summary>
-        /// BulletedListCatalog 控件。
+        /// ButtonChangePassword 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.BulletedList BulletedListCatalog;
-        
-        /// <summary>
-        /// LinkButtonChangePassword 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonChangePassword;
+        protected global::System.Web.UI.WebControls.Button ButtonChangePassword;
     }
 }

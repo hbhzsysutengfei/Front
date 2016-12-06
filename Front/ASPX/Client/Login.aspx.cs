@@ -49,17 +49,41 @@ namespace Front.ASPX.User
                 Session.Add(PageInfo.SessionKey_Client, client);
                 //jump to different page according by the role type of the client in session
                 //ke admin
+                String pathFrom = Request.Params.Get(PageInfo.PathParmaNameOfPathFrom);
+                
                 if (client.Role.RoleName.Equals(PageInfo.RoleTypeAdmin))
                 {
-                    Response.Redirect("/");
+                    if (pathFrom == null)
+                    {
+                        Response.Redirect(PageInfo.PathDefaultPage);
+                    }
+                    else
+                    {
+                        Response.Redirect(pathFrom);
+                    }
+                    
                 }
                 else if (client.Role.RoleName.Equals(PageInfo.RoleTypeSuperAdmin))
                 {
-                    Response.Redirect("/");
+                    if (pathFrom == null)
+                    {
+                        Response.Redirect(PageInfo.PathDefaultPage);
+                    }
+                    else
+                    {
+                        Response.Redirect(pathFrom);
+                    }
                 }
                 else if (client.Role.RoleName.Equals(PageInfo.RoleTypeClient))
                 {
-                    Response.Redirect("/");
+                    if (pathFrom == null)
+                    {
+                        Response.Redirect(PageInfo.PathDefaultPage);
+                    }
+                    else
+                    {
+                        Response.Redirect(pathFrom);
+                    }
                 }                
             }
             else //in the login page with the error message

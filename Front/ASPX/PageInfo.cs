@@ -14,6 +14,11 @@ namespace Front.ASPX
         public const string ClientPasswordNull = "密码不能为空";
         public const string ClientPasswordError   = "密码错误";
 
+        public const string ClientOriginalPasswordNull = "原始密码不能为空";
+        public const string ClientNewPasswordNull = "新密码不能为空";
+        public const string ClientRepeatPasswordNull = "重复密码为空";
+        public const string ClientNewPasswordAndRepeatPasswordNotSame = "两次密码不一致";
+
 
         public const string MessageBox_NotLogin = "请先登录";
         public const string MessageBox_NoAdministration = "对不起，你没有权限";
@@ -21,13 +26,18 @@ namespace Front.ASPX
 
 
 
-        public const string PathClientLogin = "/ASPX/Client/Login.aspx";
+        public const string PathClientLogin = "/ASPX/Client/Login.aspx?path_from=";
+        public const string PathClientInfo = "/ASPX/Client/ClientInfo.aspx";
+        public const string PathChangePassword = "/ASPX/Client/ChangePassword.aspx";
         public const string PathShowPage = "/Article/ShowPageMaster.aspx?articleId=";
         public const string PathCatalogArticleListPage = "/Article/CatalogArticleListMaster.aspx?catalog_name=";
         public const string PathEditPage = "/Article/EditPageMaster.aspx?articleId=";
 
+        public const string PathDefaultPage = "/";
+
         public const string PathParamNameOfArticleId = "articleId";
         public const string PathParamNameOfCatalogName = "catalog_name";
+        public const string PathParmaNameOfPathFrom = "path_from";
 
         public const string SessionKey_Client = "session_client";
         
@@ -61,8 +71,13 @@ namespace Front.ASPX
 
         public const int NumberOfArticleForMainPage = 6;
         public const int NumberOfArticleForUserPage = 20;
+        public const int NumberOfClientForSuperAdmin = 30;
 
-        
 
+
+
+
+
+        public const string DepartmentAll = "所有部门";
     }
 }

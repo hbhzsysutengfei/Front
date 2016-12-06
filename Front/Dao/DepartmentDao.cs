@@ -25,7 +25,7 @@ namespace Front.Dao
         public DepartmentEntity getByName(string name)
         {
             DepartmentEntity department = session.QueryOver<DepartmentEntity>().Where(m => m.DepartmentName == name).SingleOrDefault();
-            session.Close();
+            //session.Close();
             return department;
         }
 
@@ -37,7 +37,17 @@ namespace Front.Dao
                 session.Save(department);
             }
             tx.Commit();
-            session.Close();
+            //session.Close();
+        }
+
+        public IList<DepartmentEntity> getAllDepartments()
+        {
+            return session.QueryOver<DepartmentEntity>().OrderBy(m=>m.UpdateTime).Asc.List();
+        }
+
+        internal DepartmentEntity getByDesc(string desc)
+        {
+            return session.QueryOver<DepartmentEntity>().Where(m => m.Description == desc).SingleOrDefault();
         }
     }
 }

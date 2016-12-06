@@ -52,12 +52,21 @@ namespace Front.Service
             return dao.getArticleByAuthorAndCatalog(author, catalog, pageNumber, getNumber);
         }
 
-
-
-
-        public IList<ArticleEntity> getArticleListByCatalogName(String catalog)
+        public int getArticleListByCatalogAndAuthorForNumber(string author, string catalog)
         {
-            return dao.getArticleListByCatalog(catalog);
+            return dao.getArticleByAuthorAndCatalogForNumber(author, catalog);
+        }
+
+
+
+
+        public IList<ArticleEntity> getArticleListByCatalogName(String catalog, int pageNumber, int getNumber)
+        {
+            return dao.getArticleListByCatalog(catalog,pageNumber,getNumber);
+        }
+        public int getArticleListByCatalogNameForNumber(string catalog)
+        {
+            return dao.getArticleListByCatalogForNumber(catalog);
         }
 
 
@@ -65,6 +74,11 @@ namespace Front.Service
         {
             return dao.getArticleListByAuthor(author, pageNumber, getNumber);
         }
+        public int getArticleListByAuthorForNumber(string author)
+        {
+            return dao.getArticleListByAuthorForNumber(author);
+        }
+
 
         public IList<ArticleEntity> getAllArticleList(int pageNumber = 0, int getNumber = PageInfo.NumberOfArticleForUserPage)
         {
@@ -72,10 +86,17 @@ namespace Front.Service
             return dao.getAllArticleList(pageNumber, getNumber);
         }
 
-
-        public int getArticleListByAuthorForNumber(string author)
+        public int getAllArticleListNumber()
         {
-            return dao.getArticleListByAuthorForNumber(author);
+            return dao.getAllArticleListForNumber();
+        }
+
+
+
+
+        public void DeleteArticle(string articleId)
+        {
+            dao.DeleteArticle(articleId);
         }
     }
 }

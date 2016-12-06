@@ -20,18 +20,18 @@ namespace Front
                 {
                     this.linkButtonLogin.Text = client.RealName;
                 }
-
             }
         }
         protected void linkButtonLogin_Click(object sender, EventArgs e)
         {
             if(this.linkButtonLogin.Text.Equals(PageInfo.ASPXPageTextLogin))
             {
-                Response.Redirect(PageInfo.PathClientLogin);
+                Response.Redirect(PageInfo.PathClientLogin+Request.Url.ToString());
             }
             else
             {
                 // 跳转到用户信息界面 没写
+                Response.Redirect(PageInfo.PathClientInfo);
             }
             
         }

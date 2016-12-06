@@ -31,8 +31,7 @@
     <asp:DropDownList ID="DropDownListCatalog" runat="server" Width="200px"  Font-Size="Larger"></asp:DropDownList>
 
     
-     <br /> <br />
-   
+     <br /> <br />  
 
     <asp:Button ID="buttonSubmit" Text="发布" runat="server" OnClientClick="return confirm('是否确定')" OnClick="buttonSubmit_Click" />
     

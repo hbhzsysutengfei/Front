@@ -17,7 +17,7 @@ namespace Front.Dao
             ITransaction tx =  session.BeginTransaction();
             session.Save(client);
             tx.Commit();
-            session.Close();
+            //session.Close();
         }
 
         public void save(ClientEntity[] clients)
@@ -28,7 +28,7 @@ namespace Front.Dao
                 session.Save(client);
             }
             tx.Commit();
-            session.Close();
+            //session.Close();
         }
 
         
@@ -53,18 +53,64 @@ namespace Front.Dao
                 client.Salt = EncryptDecryptHelper.getSalt();
                 string password = EncryptDecryptHelper.getRandomString();
                 client.Password = EncryptDecryptHelper.encryptString(password,client.Salt);
+                this.UpdateClient(client);
                 return password;                
             }
-            return null;// 
-            
+            return null;//             
         }
 
+        public void changePassword(string username,string newPassword)
+        {
+            ClientEntity client = getClientByUsername(username);
+            if (client != null)
+            {
+                client.Salt = EncryptDecryptHelper.getSalt();
+                client.Password = EncryptDecryptHelper.encryptString(newPassword, client.Salt);
+                this.UpdateClient(client);
+            }
+        }
         public void UpdateClient(ClientEntity client)
         {
             ITransaction tx = session.BeginTransaction();
             session.Update(client);
             tx.Commit();
-            session.Close();
+            
+        }
+
+        public void DeleteClient(string username)
+        {
+            ITransaction tx = session.BeginTransaction();
+            ClientEntity client = this.getClientByUsername(username);
+            session.Delete(client);
+            tx.Commit();
+        }
+
+        public IList<ClientEntity> GetClientByDepartmentName(string departmentname)
+        {
+            return session.QueryOver<ClientEntity>().Where(m => m.Department.DepartmentName == departmentname).List();
+        }
+        public int GetClientByDepartmentNameForNumber(string departmentname)
+        {
+            return session.QueryOver<ClientEntity>().Where(m => m.Department.DepartmentName == departmentname).RowCount() ;
+        }
+
+        //public IList<ClientEntity> GetClientByDepartmentDesc(string desc)
+        //{
+        //    return session.QueryOver<ClientEntity>().Where(m => m.Department.Description == desc).List();
+        //}
+        //public int GetClientByDepartmentDescForNumber(string desc)
+        //{
+        //    return session.QueryOver<ClientEntity>().Where(m => m.Department.Description ==desc).RowCount();
+        //}
+
+        public IList<ClientEntity> GetAllClients(int pageNumber , int getNumber)
+        {
+            return session.QueryOver<ClientEntity>().OrderBy(m => m.Department.DepartmentName).Asc.Skip(pageNumber*getNumber).Take(getNumber).List();
+        }
+
+        public int GetAllClientForNumber()
+        {
+            return session.QueryOver<ClientEntity>().RowCount();
         }
     }
 }

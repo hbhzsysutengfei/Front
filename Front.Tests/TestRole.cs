@@ -24,13 +24,21 @@ namespace Front.Tests
         public void TestClient()
         {
             ClientEntity client = new ClientEntity();
-            client.Username = "admin";
+            client.Username = "admin_k6";
             client.Password = "123456";
             client.RealName = "张三";
+            client.Department = new DepartmentDao().getByName("6");
+            client.Catalogs = new CatalogDao().getAll();
+            client.encryptPassword();
+            ClientDao clientDao = new ClientDao();
+            clientDao.save(client);
+
+
+            clientDao.changePassword("admin_k6", "1234");
             
 
             Console.WriteLine(client.ToString());
-            client.encryptPassword();
+            
             Console.WriteLine(client.ToString());
 
             Assert.IsTrue( client.validClient());
@@ -41,22 +49,50 @@ namespace Front.Tests
         {
             ClientDao dao = new ClientDao();
 
-            ClientEntity client = dao.getClientByUsername("admin");
+            ClientEntity client = dao.getClientByUsername("admin_k6");
             if (client != null)
             {
-                Assert.IsTrue(dao.validClient(client, "123456"));
+                Assert.IsTrue(dao.validClient(client, "1234"));
             }
             else
             {
                 Assert.Fail();
             }
         }
+
+        public void TestDeleteClient()
+        {
+            ClientDao dao = new ClientDao();
+            dao.DeleteClient("admin_k6");
+        }
+        
         [TestMethod]
         public void TestResetPassword()
         {
             ClientDao dao = new ClientDao();
             string password =  dao.resetPassword("admin");
             Console.WriteLine(password);
+        }
+
+        [TestMethod]
+        public void TestAddClient()
+        {
+            ClientEntity client = new ClientEntity();
+            client.Username = "k6_yang";
+            client.Password = "123";
+            client.RealName = "yangtf";
+            client.Role = new RoleDao().getByName("client");
+            client.Department = new DepartmentDao().getByName("6");
+            client.encryptPassword();
+            ClientDao clientDao = new ClientDao();
+            clientDao.save(client);
+        }
+
+        [TestMethod]
+        public void TestGetAllClient()
+        {
+            IList<ClientEntity> clients = new ClientDao().
+
         }
     }
 }

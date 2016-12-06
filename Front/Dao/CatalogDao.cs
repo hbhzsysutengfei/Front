@@ -20,7 +20,7 @@ namespace Front.Dao
             ITransaction tx =  session.BeginTransaction();
             string generateId = session.Save(catalog) as string;
             tx.Commit();
-            session.Close();
+            //session.Close();
             return generateId;
         }
 
@@ -31,20 +31,20 @@ namespace Front.Dao
                 session.Save(catalog);
             }
             tx.Commit();
-            session.Close();            
+            //session.Close();            
         }
 
         public CatalogEntity get(string name)
         {
             CatalogEntity catalog = session.QueryOver<CatalogEntity>().Where(c => c.CatalogName == name).SingleOrDefault();
-            session.Close();
+            //session.Close();
             return catalog;
         }
 
         public IList<CatalogEntity> getAll()
         {
             IList<CatalogEntity> list = session.QueryOver<CatalogEntity>().List();
-            session.Close();
+            //session.Close();
             return list;
         }
     }

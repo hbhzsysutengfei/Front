@@ -22,6 +22,15 @@ namespace Front.Article {
         protected global::System.Web.UI.WebControls.Label LabelCatalog;
         
         /// <summary>
+        /// DropDownListCatalog 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListCatalog;
+        
+        /// <summary>
         /// GridViewArticle 控件。
         /// </summary>
         /// <remarks>
@@ -29,5 +38,50 @@ namespace Front.Article {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridViewArticle;
+        
+        /// <summary>
+        /// LinkButtonFrist 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButtonFrist;
+        
+        /// <summary>
+        /// LinkButtonFormer 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButtonFormer;
+        
+        /// <summary>
+        /// DropDownListPageNumber 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListPageNumber;
+        
+        /// <summary>
+        /// LinkButtonLatter 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButtonLatter;
+        
+        /// <summary>
+        /// LinkButtonLast 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButtonLast;
     }
 }

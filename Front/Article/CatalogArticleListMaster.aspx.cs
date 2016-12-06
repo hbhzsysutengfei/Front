@@ -27,10 +27,11 @@ namespace Front.Article
                 {
                     this.LabelCatalogName.Text = CatalogName;
                     ArticleService service = new ArticleService();
-                    IList<ArticleEntity> articles = service.getArticleListByCatalogName(CatalogName);
+                    IList<ArticleEntity> articles = service.getArticleListByCatalogName(CatalogName,0,PageInfo.NumberOfArticleForUserPage);
                     foreach (var article in articles)
                     {
-                        this.BulletedListCatalogArticleList.Items.Add(new ListItem(article.Title+"  "+ article.UpdateTime.ToString(), PageInfo.PathShowPage+article.Id));
+                        this.BulletedListCatalogArticleList.Items.Add(
+                            new ListItem(article.Title+"  "+ article.UpdateTime.ToString(), PageInfo.PathShowPage+article.Id));
                     }
                 }
             }

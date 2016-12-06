@@ -10,52 +10,7 @@
 namespace Front.ASPX.Client {
     
     
-    public partial class ClientInfo {
-        
-        /// <summary>
-        /// LabelClientInfo 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelClientInfo;
-        
-        /// <summary>
-        /// LabelUserName 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelUserName;
-        
-        /// <summary>
-        /// LabelUserNameInfo 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelUserNameInfo;
-        
-        /// <summary>
-        /// LabelReaName 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelReaName;
-        
-        /// <summary>
-        /// LabelRealNameInfo 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRealNameInfo;
+    public partial class ClientList {
         
         /// <summary>
         /// LabelDepartment 控件。
@@ -67,39 +22,66 @@ namespace Front.ASPX.Client {
         protected global::System.Web.UI.WebControls.Label LabelDepartment;
         
         /// <summary>
-        /// LabelDepartmentInfo 控件。
+        /// DropDownListDepartment 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelDepartmentInfo;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListDepartment;
         
         /// <summary>
-        /// LabelCatalog 控件。
+        /// GridViewClientList 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelCatalog;
+        protected global::System.Web.UI.WebControls.GridView GridViewClientList;
         
         /// <summary>
-        /// BulletedListCatalog 控件。
+        /// LinkButtonFrist 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.BulletedList BulletedListCatalog;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButtonFrist;
         
         /// <summary>
-        /// LinkButtonChangePassword 控件。
+        /// LinkButtonFormer 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonChangePassword;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButtonFormer;
+        
+        /// <summary>
+        /// DropDownListPageNumber 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListPageNumber;
+        
+        /// <summary>
+        /// LinkButtonLatter 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButtonLatter;
+        
+        /// <summary>
+        /// LinkButtonLast 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButtonLast;
     }
 }

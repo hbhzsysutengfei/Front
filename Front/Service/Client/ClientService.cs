@@ -44,9 +44,32 @@ namespace Front.Service.Client
 
         }
 
-        public void ChangeClientPassword()
+        public void ChangeClientPassword(string username, string newPassword)
         {
+            clientDao.changePassword(username, newPassword);
+        }
 
+        public IList<ClientEntity> GetAllClients(int pageNumber = 0, int getNumber = PageInfo.NumberOfClientForSuperAdmin)
+        {
+            IList<ClientEntity> clients = clientDao.GetAllClients(pageNumber, getNumber);
+            foreach (var client in clients)
+            {
+                client.CleanUserInfo();
+            }
+            return clients;
+        }
+        public int GetAllClientForNumber()
+        {
+            return clientDao.GetAllClientForNumber();
+        }
+
+        public int GetClientByDepartmentDescForNumber(string department)
+        {
+            return clientDao.GetClientByDepartmentNameForNumber(department);
+        }
+        public IList<ClientEntity> getClientByDepartmentDesc(String department)
+        {
+            return clientDao.GetClientByDepartmentName(department);
         }
         
 
