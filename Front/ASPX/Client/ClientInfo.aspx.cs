@@ -1,4 +1,5 @@
 ﻿using Front.Model;
+using Front.Service.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,24 +20,51 @@ namespace Front.ASPX.Client
                 {
                     Response.Redirect(PageInfo.PathClientLogin + Request.Url.ToString());
                 }
-                else
+                else 
                 {
-                    /// write the client message to the aspx
-                    this.LabelUserNameInfo.Text = client.Username;
-                    this.LabelRealNameInfo.Text = client.RealName;
-                    this.LabelDepartmentInfo.Text = client.Department.Description;
-                    if (client.Role.RoleName.Equals(PageInfo.RoleTypeClient))
+                    if (client.Role.RoleName.Equals(PageInfo.RoleTypeSuperAdmin))
                     {
-                        this.BulletedListCatalog.Visible = false;
-                    }
-                    else
-                    {
-                        foreach (var catalog in client.Catalogs)
+                        string client_name = Request.Params.Get(PageInfo.PathParamNameOfClientName);
+                        if (client_name != null)
                         {
-                            this.BulletedListCatalog.Items.Add(new ListItem(catalog.CatalogName, PageInfo.PathCatalogArticleListPage + catalog.CatalogName));
+                            ClientService service = new ClientService();
+                            ClientEntity view_client = service.GetClientByUsername(client_name);
+                            if (view_client != null)
+                            {
+                                this.LabelUserNameInfo.Text = view_client.Username;
+                                this.LabelRealNameInfo.Text = view_client.RealName;
+                                this.LabelDepartmentInfo.Text = view_client.Department.Description;
+                                if (client.Role.RoleName.Equals(PageInfo.RoleTypeClient))
+                                {
+                                    this.BulletedListCatalog.Visible = false;
+                                }
+                                else
+                                {
+                                    foreach (var catalog in client.Catalogs)
+                                    {
+                                        this.BulletedListCatalog.Items.Add(new ListItem(catalog.CatalogName, PageInfo.PathCatalogArticleListPage + catalog.CatalogName));
+                                    }
+                                }
+                            }
                         }
                     }
-
+                    else if (client.Role.RoleName.Equals(PageInfo.RoleTypeAdmin))
+                    {
+                        this.LabelUserNameInfo.Text = client.Username;
+                        this.LabelRealNameInfo.Text = client.RealName;
+                        this.LabelDepartmentInfo.Text = client.Department.Description;
+                        if (client.Role.RoleName.Equals(PageInfo.RoleTypeClient))
+                        {
+                            this.BulletedListCatalog.Visible = false;
+                        }
+                        else
+                        {
+                            foreach (var catalog in client.Catalogs)
+                            {
+                                this.BulletedListCatalog.Items.Add(new ListItem(catalog.CatalogName, PageInfo.PathCatalogArticleListPage + catalog.CatalogName));
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -46,6 +74,9 @@ namespace Front.ASPX.Client
             Response.Redirect(PageInfo.PathChangePassword);
         }
 
-        
+        protected void LinkButtonManagementCatalog_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

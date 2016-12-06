@@ -71,6 +71,17 @@ namespace Front.Service.Client
         {
             return clientDao.GetClientByDepartmentName(department);
         }
+
+
+        public ClientEntity GetClientByUsername(string username)
+        {
+            ClientEntity client = clientDao.getClientByUsername(username);
+            if (client != null)
+            {
+                client.CleanUserInfo();
+            }
+            return client;
+        }
         
 
         

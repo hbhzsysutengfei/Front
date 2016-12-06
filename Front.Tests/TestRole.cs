@@ -91,7 +91,7 @@ namespace Front.Tests
         [TestMethod]
         public void TestGetAllClient()
         {
-            IList<ClientEntity> clients = new ClientDao().
+            IList<ClientEntity> clients = new ClientDao().GetClientByDepartmentName("6");
 
         }
     }

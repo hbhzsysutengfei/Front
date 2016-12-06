@@ -159,7 +159,6 @@ namespace Front.Article
            
         }
 
-
         private void InitCatalogForSuperAdmin()
         {
             CatalogService service = new CatalogService();
@@ -189,10 +188,6 @@ namespace Front.Article
                 return service.getArticleListByCatalogName(catalog, pageNumber, getNumber);
             }
         }
-
-
-       
-       
 
         //填充页码数字
         private void setDropDownListPageNumber()

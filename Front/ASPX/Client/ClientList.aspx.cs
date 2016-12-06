@@ -23,6 +23,11 @@ namespace Front.ASPX.Client
         private string TableName = "client";
 
 
+        private const string CommandNameView    =  "View";
+        private const string CommandNameDelete  =   "Delete";
+        private const string CommandNameEdit    =   "Authorize";
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -48,7 +53,7 @@ namespace Front.ASPX.Client
                     {
                         this.CurrentPage = 1;
                         this.setDropDownListPageNumber(); //初始化
-                        this.PageState();                       
+                        this.PageState();
                     }
                     this.setItemToGridView(clients);
                 }
@@ -141,6 +146,7 @@ namespace Front.ASPX.Client
             }
             this.DropDownListDepartment.SelectedIndex = 0;
         }
+        
         private IList<ClientEntity> getAllClient(ClientService service, string departmentDesc, int pageNumber, int getNumber, Boolean calculateItemCount)
         {
             if (departmentDesc == null)
@@ -166,7 +172,22 @@ namespace Front.ASPX.Client
 
         protected void GridViewClientList_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-           
+            int rowIndex = Convert.ToInt32(e.CommandArgument);
+            switch (e.CommandName)
+            {
+                case CommandNameView:
+                    Response.Redirect(PageInfo.PathClientInfo + this.GridViewClientList.Rows[rowIndex].Cells[4].Text);
+                    break;
+                case CommandNameEdit:
+
+                    break;
+                case CommandNameDelete:
+
+                    break;
+                default:
+
+                    break;
+            }
         }
 
         protected void LinkButtonFrist_Click(object sender, EventArgs e)
@@ -264,10 +285,10 @@ namespace Front.ASPX.Client
             IList<ClientEntity> clients = this.getAllClient(service, department, 0 , PageSize, false);
             if (this.ItemCount != 0)
             {
-                
+                this.setDropDownListPageNumber(); //初始化
+                this.PageState();
             }
             this.setItemToGridView(clients);
         }
-
     }
 }

@@ -27,7 +27,7 @@ namespace Front.ASPX
 
 
         public const string PathClientLogin = "/ASPX/Client/Login.aspx?path_from=";
-        public const string PathClientInfo = "/ASPX/Client/ClientInfo.aspx";
+        public const string PathClientInfo = "/ASPX/Client/ClientInfo.aspx?client_name=";
         public const string PathChangePassword = "/ASPX/Client/ChangePassword.aspx";
         public const string PathShowPage = "/Article/ShowPageMaster.aspx?articleId=";
         public const string PathCatalogArticleListPage = "/Article/CatalogArticleListMaster.aspx?catalog_name=";
@@ -38,6 +38,7 @@ namespace Front.ASPX
         public const string PathParamNameOfArticleId = "articleId";
         public const string PathParamNameOfCatalogName = "catalog_name";
         public const string PathParmaNameOfPathFrom = "path_from";
+        public const string PathParamNameOfClientName = "client_name";
 
         public const string SessionKey_Client = "session_client";
         

@@ -10,7 +10,7 @@
         <asp:GridView ID="GridViewClientList" runat="server" OnRowCommand="GridViewClientList_RowCommand">
             <Columns>
                 <asp:ButtonField ButtonType="Button" CommandName="View" HeaderText="操作" ShowHeader="True" Text="查看" />
-                <asp:ButtonField ButtonType="Button" CommandName="Edit" HeaderText="编辑" ShowHeader="true" Text="编辑" />
+                <asp:ButtonField ButtonType="Button" CommandName="Authorize" HeaderText="操作" ShowHeader="true" Text="授权栏目" />
                 <asp:ButtonField ButtonType="Button" CommandName="Delete" HeaderText="操作" ShowHeader="true" Text="删除" />
             </Columns>
         </asp:GridView>
