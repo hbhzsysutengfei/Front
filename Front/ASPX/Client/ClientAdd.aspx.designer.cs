@@ -10,52 +10,88 @@
 namespace Front.ASPX.Client {
     
     
-    public partial class ClientInfo {
+    public partial class ClientAdd {
         
         /// <summary>
-        /// LabelClientInfo 控件。
+        /// LabelPageMessageInfo 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelClientInfo;
+        protected global::System.Web.UI.WebControls.Label LabelPageMessageInfo;
         
         /// <summary>
-        /// LabelUserName 控件。
+        /// LabelUsername 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelUserName;
+        protected global::System.Web.UI.WebControls.Label LabelUsername;
         
         /// <summary>
-        /// LabelUserNameInfo 控件。
+        /// TextBoxUsername 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelUserNameInfo;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxUsername;
         
         /// <summary>
-        /// LabelReaName 控件。
+        /// LabelPassword 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelReaName;
+        protected global::System.Web.UI.WebControls.Label LabelPassword;
         
         /// <summary>
-        /// LabelRealNameInfo 控件。
+        /// TextBoxPassword 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRealNameInfo;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxPassword;
+        
+        /// <summary>
+        /// LabelRepeatPassword 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelRepeatPassword;
+        
+        /// <summary>
+        /// TextBoxRepeatPassword 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxRepeatPassword;
+        
+        /// <summary>
+        /// LabelRealName 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelRealName;
+        
+        /// <summary>
+        /// TextBoxRealName 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxRealName;
         
         /// <summary>
         /// LabelDepartment 控件。
@@ -67,31 +103,31 @@ namespace Front.ASPX.Client {
         protected global::System.Web.UI.WebControls.Label LabelDepartment;
         
         /// <summary>
-        /// LabelDepartmentInfo 控件。
+        /// DropDownListDepartment 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelDepartmentInfo;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListDepartment;
         
         /// <summary>
-        /// LabelRole 控件。
+        /// LabelRoleType 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRole;
+        protected global::System.Web.UI.WebControls.Label LabelRoleType;
         
         /// <summary>
-        /// LabelRoleInfo 控件。
+        /// DropDownListRole 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelRoleInfo;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListRole;
         
         /// <summary>
         /// LabelCatalog 控件。
@@ -103,48 +139,21 @@ namespace Front.ASPX.Client {
         protected global::System.Web.UI.WebControls.Label LabelCatalog;
         
         /// <summary>
-        /// BulletedListCatalog 控件。
+        /// CheckBoxListCatalog 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.BulletedList BulletedListCatalog;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListCatalog;
         
         /// <summary>
-        /// LinkButtonManagementCatalog 控件。
+        /// ButtonAddClient 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonManagementCatalog;
-        
-        /// <summary>
-        /// LinkButtonChangePassword 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonChangePassword;
-        
-        /// <summary>
-        /// LinkButtonResetPassword 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonResetPassword;
-        
-        /// <summary>
-        /// LabelPageMessageInfo 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelPageMessageInfo;
+        protected global::System.Web.UI.WebControls.Button ButtonAddClient;
     }
 }

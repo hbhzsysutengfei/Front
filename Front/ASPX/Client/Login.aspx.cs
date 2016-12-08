@@ -53,7 +53,7 @@ namespace Front.ASPX.User
                 
                 if (client.Role.RoleName.Equals(PageInfo.RoleTypeAdmin))
                 {
-                    if (pathFrom == null)
+                    if (pathFrom == null || pathFrom.Length == 0)
                     {
                         Response.Redirect(PageInfo.PathDefaultPage);
                     }
@@ -65,7 +65,7 @@ namespace Front.ASPX.User
                 }
                 else if (client.Role.RoleName.Equals(PageInfo.RoleTypeSuperAdmin))
                 {
-                    if (pathFrom == null)
+                    if (pathFrom == null || pathFrom.Length == 0)
                     {
                         Response.Redirect(PageInfo.PathDefaultPage);
                     }
@@ -76,7 +76,7 @@ namespace Front.ASPX.User
                 }
                 else if (client.Role.RoleName.Equals(PageInfo.RoleTypeClient))
                 {
-                    if (pathFrom == null)
+                    if (pathFrom == null || pathFrom.Length == 0)
                     {
                         Response.Redirect(PageInfo.PathDefaultPage);
                     }

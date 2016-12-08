@@ -43,7 +43,14 @@ namespace Front.Article
                     DropDownListCatalog.Items.Add(catalog.CatalogName);
                 }
                 
-                if (UpdateArticleId != null)
+                if (UpdateArticleId == null || UpdateArticleId.Length == 0)
+                {
+                    
+                    ///for create 
+                    DropDownListCatalog.SelectedIndex = 0;
+                    this.BoolUpdateArticle = false;
+                }
+                else
                 {
                     ///update page module 
                     ///load the article
@@ -62,12 +69,7 @@ namespace Front.Article
                     {
                         Response.Write("<script>alert('" + PageInfo.MessageBox_NoAdministration + "')</script>");
                     }
-                }
-                else
-                {
-                    ///for create 
-                    DropDownListCatalog.SelectedIndex = 0;
-                    this.BoolUpdateArticle = false;
+                   
                 }
             }
             else

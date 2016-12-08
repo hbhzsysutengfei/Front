@@ -19,5 +19,20 @@ namespace Front.Service
         {
             return dao.getAll();
         }
+
+        public IList<CatalogEntity> GetCatalogsByNames(string[] names)
+        {
+            return dao.getCatalogsByNames(names);
+        }
+
+        public CatalogEntity GetCatalogByName(string name)
+        {
+            return dao.get(name);
+        }
+
+        public string SaveCatalog(CatalogEntity catalog)
+        {
+            return  dao.save(catalog);
+        }
     }
 }

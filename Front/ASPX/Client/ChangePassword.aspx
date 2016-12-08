@@ -19,7 +19,7 @@
         </style>
     <div class="div_form">
         <asp:Label ID="LabelTitle" Text="修改密码" runat="server" Font-Size="XX-Large" Font-Bold="true"></asp:Label><br /><br />
-        <asp:Label ID="LabelMessageInfo" Text="AA" runat="server"  CssClass="pageinfo"></asp:Label><br /><br />
+        <asp:Label ID="LabelMessageInfo" Text="" runat="server"  CssClass="pageinfo"></asp:Label><br /><br />
         <asp:Label ID="LabelOriginalPassword" Text="原始密码：" runat="server"  CssClass="textBox"></asp:Label>
         <asp:TextBox ID="TextBoxOriginalPassword" runat="server" CssClass="textBox" TextMode="Password"></asp:TextBox><br />
 
@@ -28,7 +28,7 @@
         <asp:Label ID="LabelRepeatPassword" Text="再输一次：" runat="server"  CssClass="textBox"></asp:Label>
         <asp:TextBox ID="TextBoxRepeatPassword" runat="server" CssClass="textBox" TextMode="Password"></asp:TextBox><br /><br/>
 
-        <asp:Button ID="ButtonChangePassword" OnClientClick="return confirm('是否确定')" runat="server" OnClick="ButtonChangePassword_Click"  Text="更改密码" Height="38px" Width="93px" Font-Size="X-Large" />
+        <asp:Button ID="ButtonChangePassword" OnClientClick="return confirm('是否确定')" runat="server" OnClick="ButtonChangePassword_Click"  Text="更改密码" Height="38px" Width="152px" Font-Size="X-Large" />
     </div>
    
 </asp:Content>

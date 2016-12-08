@@ -23,7 +23,7 @@ namespace Front.Service.Client
             if (client == null)
             {
                 client = new ClientEntity();
-                client.PageInfo = PageInfo.ClientNotExist;
+                client.PageInfo = PageInfo.ClientUsernameNotExist;
                 return client;
             }
             else if (clientDao.validClient(client, password) == false)
@@ -52,12 +52,10 @@ namespace Front.Service.Client
         public IList<ClientEntity> GetAllClients(int pageNumber = 0, int getNumber = PageInfo.NumberOfClientForSuperAdmin)
         {
             IList<ClientEntity> clients = clientDao.GetAllClients(pageNumber, getNumber);
-            foreach (var client in clients)
-            {
-                client.CleanUserInfo();
-            }
+            this.CleanUserInfo(clients);
             return clients;
         }
+
         public int GetAllClientForNumber()
         {
             return clientDao.GetAllClientForNumber();
@@ -82,8 +80,63 @@ namespace Front.Service.Client
             }
             return client;
         }
+
+        public string Save(ClientEntity client)
+        {
+            return clientDao.save(client);
+        }
+
+        public void AuthorizeCatalogToClients(CatalogEntity catalog,string[] usernames)
+        {
+            IList<ClientEntity> clients = clientDao.GetClientsByUsernames(usernames);
+            foreach (var client in clients)
+            {
+                client.Catalogs.Add(catalog);
+            }
+            clientDao.UpdateClients(clients);
+        }
+
+        //public void UpdateClients(IList<ClientEntity> clients)
+        //{
+        //    clientDao.UpdateClients(clients);
+        //}
+
+        public string ResetPassword(string username)
+        {
+            return clientDao.resetPassword(username);
+        }
+
+
+        public IList<ClientEntity> GetAllAdmin()
+        {
+            IList<ClientEntity> clients = clientDao.GetAllAdmin();
+            this.CleanUserInfo(clients);
+            return clients;
+        }
+        public IList<ClientEntity> GetAllSuperAdmin()
+        {
+            IList<ClientEntity> clients = clientDao.GetAllSuperAdmin();
+            this.CleanUserInfo(clients);
+            return clients;
+        }
+
+
+
+        public IList<ClientEntity> GetClientsByUsernames(string[] names)
+        {
+            IList<ClientEntity> clients = clientDao.GetClientsByUsernames(names);
+            this.CleanUserInfo(clients);
+            return clients;
+        }
         
 
-        
+        private void CleanUserInfo(IList<ClientEntity> clients)
+        {
+            foreach (var client in clients)
+            {
+                client.CleanUserInfo();
+            }
+        }
+       
     }
 }

@@ -1,4 +1,5 @@
-﻿using Front.Model;
+﻿using Front.ASPX;
+using Front.Model;
 using Front.Util;
 using NHibernate;
 using System;
@@ -12,12 +13,13 @@ namespace Front.Dao
     {
         public ClientDao() { }
 
-        public void save(ClientEntity client)
+        public string save(ClientEntity client)
         {            
             ITransaction tx =  session.BeginTransaction();
-            session.Save(client);
+            string res = session.Save(client) as string;
             tx.Commit();
             //session.Close();
+            return res;
         }
 
         public void save(ClientEntity[] clients)
@@ -111,6 +113,32 @@ namespace Front.Dao
         public int GetAllClientForNumber()
         {
             return session.QueryOver<ClientEntity>().RowCount();
+        }
+
+
+        public IList<ClientEntity> GetAllAdmin()
+        {
+            return session.QueryOver<ClientEntity>().Where(m => m.Role.RoleName == PageInfo.RoleTypeAdmin).List();
+           
+        }
+        public IList<ClientEntity> GetAllSuperAdmin()
+        {
+            return session.QueryOver<ClientEntity>().Where(m => m.Role.RoleName == PageInfo.RoleTypeSuperAdmin).List();
+        }
+
+        public IList<ClientEntity> GetClientsByUsernames(string[] names)
+        {
+            return session.QueryOver<ClientEntity>().WhereRestrictionOn(m => m.Username).IsIn(names).List();
+        }
+
+        public void UpdateClients(IList<ClientEntity> clients)
+        {
+            ITransaction tx = session.BeginTransaction();
+            foreach (var client in clients)
+            {
+                session.Update(client);
+            }
+            tx.Commit();
         }
     }
 }

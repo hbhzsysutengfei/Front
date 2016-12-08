@@ -10,14 +10,23 @@ namespace Front.ASPX
         public const string PageInfoOK = "OK";
 
         public const string ClientUsernameNull = "用户名不能为空";
-        public const string ClientNotExist        = "用户不存在";
+        public const string ClientUsernameNotExist        = "用户不存在";
+        public const string ClientUsernameAlreadExist = "用户名已经存在";
         public const string ClientPasswordNull = "密码不能为空";
         public const string ClientPasswordError   = "密码错误";
+        public const string ClientRealNameNull = "真实名字不能为空";
+
+
 
         public const string ClientOriginalPasswordNull = "原始密码不能为空";
         public const string ClientNewPasswordNull = "新密码不能为空";
         public const string ClientRepeatPasswordNull = "重复密码为空";
         public const string ClientNewPasswordAndRepeatPasswordNotSame = "两次密码不一致";
+        public const string MessageInfo_CatalogNameNotExist = "栏目不存在！";
+        public const string MessageInfo_CatalogNameNull = "栏目名称不能为空";
+        public const string MessageInfo_CatalogNameExist = "栏目名称已经存在";
+        public const string MessageInfo_AddCatalogError = "添加栏目失败，请联系开发者";
+        public const string MessageInfo_ParamCatalogNameNull = "获取栏目名参数失败";
 
 
         public const string MessageBox_NotLogin = "请先登录";
@@ -33,12 +42,17 @@ namespace Front.ASPX
         public const string PathCatalogArticleListPage = "/Article/CatalogArticleListMaster.aspx?catalog_name=";
         public const string PathEditPage = "/Article/EditPageMaster.aspx?articleId=";
 
+        public const string PathCatalogAddPage = "/ASPX/Catalog/CatalogAdd.aspx";
+        public const string PathCatalogAuthorizePage = "/ASPX/Catalog/CatalogAuthorize.aspx?catalog_name=";
+ 
+
         public const string PathDefaultPage = "/";
 
         public const string PathParamNameOfArticleId = "articleId";
         public const string PathParamNameOfCatalogName = "catalog_name";
         public const string PathParmaNameOfPathFrom = "path_from";
         public const string PathParamNameOfClientName = "client_name";
+       
 
         public const string SessionKey_Client = "session_client";
         
@@ -80,5 +94,7 @@ namespace Front.ASPX
 
 
         public const string DepartmentAll = "所有部门";
+
+       
     }
 }

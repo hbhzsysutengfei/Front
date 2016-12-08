@@ -22,10 +22,14 @@
         <asp:Label ID="LabelDepartmentInfo" runat="server" Text=""></asp:Label>
         <br />
 
+        <asp:Label ID="LabelRole" runat="server" Text="角色："></asp:Label>
+        <asp:Label ID="LabelRoleInfo" runat="server" Text=""></asp:Label>
+        <br />
+
         <asp:Label ID="LabelCatalog" runat="server" Text="栏目:"></asp:Label>
         <asp:BulletedList ID="BulletedListCatalog" DisplayMode="HyperLink" runat="server">
         </asp:BulletedList>
-        <asp:LinkButton ID="LinkButtonManagementCatalog" Visible="false" Text="栏目授权" OnClick="LinkButtonManagementCatalog_Click"></asp:LinkButton>
+        <asp:LinkButton ID="LinkButtonManagementCatalog" Visible="False" Text="栏目" OnClick="LinkButtonManagementCatalog_Click" runat="server" Enabled="False"></asp:LinkButton>
 
         <br />
     </div>
@@ -34,6 +38,8 @@
     
    <%-- <asp:LinkButton ID="LinkButtonChangeClientInfo" runat="server"  Text="修改用户信息" />--%>
 
-    <asp:LinkButton ID="LinkButtonChangePassword" runat="server" Text="修改密码" OnClick="LinkButtonChangePassword_Click"></asp:LinkButton>
-
+    <asp:LinkButton ID="LinkButtonChangePassword" runat="server" Text="修改密码" OnClick="LinkButtonChangePassword_Click" Enabled="False" Visible="False"></asp:LinkButton>
+    <asp:LinkButton ID="LinkButtonResetPassword" runat="server" Text="重置密码" OnClick="LinkButtonResetPassword_Click" OnClientClick="return confirm('确认重置密码')" Enabled="False" Visible="False"></asp:LinkButton>
+    <br />
+    <asp:Label ID="LabelPageMessageInfo" runat="server"></asp:Label>
 </asp:Content>

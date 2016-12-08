@@ -24,8 +24,9 @@ namespace Front.ASPX.Client
 
 
         private const string CommandNameView    =  "View";
+        private const string CommandNameEdit    =   "Edit";
         private const string CommandNameDelete  =   "Delete";
-        private const string CommandNameEdit    =   "Authorize";
+        private const string CommandNameAuthorize    =   "Authorize";
 
 
         protected void Page_Load(object sender, EventArgs e)
@@ -182,6 +183,9 @@ namespace Front.ASPX.Client
 
                     break;
                 case CommandNameDelete:
+
+                    break;
+                case CommandNameAuthorize:
 
                     break;
                 default:

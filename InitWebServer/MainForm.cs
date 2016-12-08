@@ -25,7 +25,7 @@ namespace InitWebServer
             //initRoles();
             //initDepartment();
 
-            initCatalog();
+            //initCatalog();
 
             initAdminClient();
 
@@ -40,8 +40,7 @@ namespace InitWebServer
                 catalogs[index] = new CatalogEntity(catalogNames[index]);                
             }
             CatalogDao dao = new CatalogDao();
-            dao.save(catalogs);
-            
+            dao.save(catalogs);           
 
         }
 
@@ -69,6 +68,14 @@ namespace InitWebServer
 
         public void initAdminClient()
         {
+            ClientDao dao = new ClientDao();
+            ClientEntity temp = dao.getClientByUsername("admin");
+            if (temp != null)
+            {
+                dao.DeleteClient("admin");
+            }  
+
+
             ClientEntity client = new ClientEntity();
             RoleDao roleDao = new RoleDao();
             DepartmentDao departmentDao = new DepartmentDao();
@@ -83,7 +90,7 @@ namespace InitWebServer
             IList<CatalogEntity> catalogs = new CatalogDao().getAll();
             client.Catalogs = catalogs;
 
-            ClientDao dao = new ClientDao();
+           
             dao.save(client);
         }
 

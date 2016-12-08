@@ -94,5 +94,23 @@ namespace Front.Tests
             IList<ClientEntity> clients = new ClientDao().GetClientByDepartmentName("6");
 
         }
+
+        [TestMethod]
+        public void TestGetCatalogsByNames()
+        {
+            string[] names = { "申请", "调研文章" };
+            CatalogDao dao = new CatalogDao();
+            IList<CatalogEntity> list = dao.getCatalogsByNames(names);
+        }
+        [TestMethod]
+        public void TestStringArray()
+        {
+            List<string> strs = new List<string>();
+            strs.Add("A");
+            strs.Add("B");
+            strs.Add("C");
+            string[] stts = strs.ToArray();
+            
+        }
     }
 }

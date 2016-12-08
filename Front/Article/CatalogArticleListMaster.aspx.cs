@@ -19,7 +19,7 @@ namespace Front.Article
             CatalogName = Request.Params.Get(PageInfo.PathParamNameOfCatalogName);
             if (!IsPostBack)
             {                
-                if (CatalogName == null)
+                if (CatalogName == null || CatalogName.Length == 0)
                 {
                     return;
                 }

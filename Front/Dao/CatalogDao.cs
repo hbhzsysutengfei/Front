@@ -47,5 +47,11 @@ namespace Front.Dao
             //session.Close();
             return list;
         }
+
+        public IList<CatalogEntity> getCatalogsByNames(string[] names)
+        {
+            IList<CatalogEntity> list = session.QueryOver<CatalogEntity>().WhereRestrictionOn(c => c.CatalogName).IsIn(names).List();
+            return list;
+        }
     }
 }

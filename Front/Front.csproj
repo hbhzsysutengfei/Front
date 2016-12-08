@@ -71,9 +71,13 @@
     <Content Include="Article\EditPageMaster.aspx" />
     <Content Include="Article\ManagementArticleMaster.aspx" />
     <Content Include="Article\ShowPageMaster.aspx" />
-    <Content Include="ASPX\Client\AddClient.aspx" />
+    <Content Include="ASPX\Catalog\CatalogAdd.aspx" />
+    <Content Include="ASPX\Catalog\CatalogAuthorize.aspx" />
+    <Content Include="ASPX\Catalog\CatalogInfo.aspx" />
+    <Content Include="ASPX\Catalog\CatalogList.aspx" />
     <Content Include="ASPX\Client\ChangeClientInfo.aspx" />
     <Content Include="ASPX\Client\ChangePassword.aspx" />
+    <Content Include="ASPX\Client\ClientAdd.aspx" />
     <Content Include="ASPX\Client\ClientInfo.aspx" />
     <Content Include="ASPX\Client\ClientList.aspx" />
     <Content Include="ASPX\Client\Login.aspx" />
@@ -389,12 +393,33 @@
     <Compile Include="Article\ShowPageMaster.aspx.designer.cs">
       <DependentUpon>ShowPageMaster.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ASPX\Client\AddClient.aspx.cs">
-      <DependentUpon>AddClient.aspx</DependentUpon>
+    <Compile Include="ASPX\Catalog\CatalogAdd.aspx.cs">
+      <DependentUpon>CatalogAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="ASPX\Client\AddClient.aspx.designer.cs">
-      <DependentUpon>AddClient.aspx</DependentUpon>
+    <Compile Include="ASPX\Catalog\CatalogAdd.aspx.designer.cs">
+      <DependentUpon>CatalogAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\Catalog\CatalogAuthorize.aspx.cs">
+      <DependentUpon>CatalogAuthorize.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\Catalog\CatalogAuthorize.aspx.designer.cs">
+      <DependentUpon>CatalogAuthorize.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\Catalog\CatalogInfo.aspx.cs">
+      <DependentUpon>CatalogInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\Catalog\CatalogInfo.aspx.designer.cs">
+      <DependentUpon>CatalogInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\Catalog\CatalogList.aspx.cs">
+      <DependentUpon>CatalogList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\Catalog\CatalogList.aspx.designer.cs">
+      <DependentUpon>CatalogList.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\Client\ChangeClientInfo.aspx.cs">
       <DependentUpon>ChangeClientInfo.aspx</DependentUpon>
@@ -409,6 +434,13 @@
     </Compile>
     <Compile Include="ASPX\Client\ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\Client\ClientAdd.aspx.cs">
+      <DependentUpon>ClientAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\Client\ClientAdd.aspx.designer.cs">
+      <DependentUpon>ClientAdd.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\Client\ClientInfo.aspx.cs">
       <DependentUpon>ClientInfo.aspx</DependentUpon>
@@ -445,6 +477,7 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -463,6 +496,7 @@
     <Compile Include="Service\CatalogService.cs" />
     <Compile Include="Service\Client\ClientService.cs" />
     <Compile Include="Service\DepartmentService.cs" />
+    <Compile Include="Service\RoleService.cs" />
     <Compile Include="Util\EncryptDecryptHelper.cs" />
     <Compile Include="Util\NHibernateHelper.cs" />
   </ItemGroup>

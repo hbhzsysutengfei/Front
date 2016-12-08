@@ -60,7 +60,7 @@ namespace Front.Article
         private string getArticleId()
         {
             articleId = Request.Params.Get(PageInfo.PathParamNameOfArticleId);
-            if (articleId == null)
+            if (articleId == null || articleId.Length ==0)
             {
                 articleId = ArticleIdOfPageNotFound;
             }
