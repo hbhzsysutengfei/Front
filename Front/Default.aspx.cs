@@ -25,16 +25,16 @@ namespace Front
                     switch (article.Catalog.CatalogName)
                     {
                         case PageInfo.CatalogFirst:
-                            this.BulletedListFirst.Items.Add(new ListItem(article.Title + "   " + article.UpdateTime.ToString(), PageInfo.PathShowPage + article.Id));
+                            this.BulletedListFirst.Items.Add(new ListItem(article.Title + "   " + article.UpdateTime.ToString(), PageInfo.PathArticleShowPage + article.Id));
                             break;
                         case PageInfo.CatalogSecond:
-                            this.BulletedListSecond.Items.Add(new ListItem(article.Title + "   " + article.UpdateTime.ToString(), PageInfo.PathShowPage + article.Id));
+                            this.BulletedListSecond.Items.Add(new ListItem(article.Title + "   " + article.UpdateTime.ToString(), PageInfo.PathArticleShowPage + article.Id));
                             break;
                         case PageInfo.CatalogThird:
-                            this.BulletedListThird.Items.Add(new ListItem(article.Title + "   " + article.UpdateTime.ToString(), PageInfo.PathShowPage + article.Id));
+                            this.BulletedListThird.Items.Add(new ListItem(article.Title + "   " + article.UpdateTime.ToString(), PageInfo.PathArticleShowPage + article.Id));
                             break;
                         case PageInfo.CatalogForth:
-                            this.BulletedListForth.Items.Add(new ListItem(article.Title + "   " + article.UpdateTime.ToString(), PageInfo.PathShowPage + article.Id));
+                            this.BulletedListForth.Items.Add(new ListItem(article.Title + "   " + article.UpdateTime.ToString(), PageInfo.PathArticleShowPage + article.Id));
                             break;
                         default:
                             break;

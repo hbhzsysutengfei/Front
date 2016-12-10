@@ -31,7 +31,7 @@ namespace Front.Article
                     foreach (var article in articles)
                     {
                         this.BulletedListCatalogArticleList.Items.Add(
-                            new ListItem(article.Title+"  "+ article.UpdateTime.ToString(), PageInfo.PathShowPage+article.Id));
+                            new ListItem(article.Title+"  "+ article.UpdateTime.ToString(), PageInfo.PathArticleShowPage+article.Id));
                     }
                 }
             }

@@ -96,7 +96,7 @@ namespace Front.Article
                 article.Catalog = new CatalogDao().get(DropDownListCatalog.SelectedItem.Text);
                 article.updateUpdateTime();                
                 service.update(article);
-                Response.Redirect(PageInfo.PathShowPage + UpdateArticleId);
+                Response.Redirect(PageInfo.PathArticleShowPage + UpdateArticleId);
             }
             else
             {
@@ -107,7 +107,7 @@ namespace Front.Article
                 article.Author = new ClientDao().getClientByUsername(((ClientEntity)Session[PageInfo.SessionKey_Client]).Username);
                 article.Catalog = new CatalogDao().get(DropDownListCatalog.SelectedItem.Text);                               
                 string res = service.save(article);
-                Response.Redirect(PageInfo.PathShowPage + res);
+                Response.Redirect(PageInfo.PathArticleShowPage + res);
             }                   
         }       
     }

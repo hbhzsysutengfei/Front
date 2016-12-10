@@ -26,6 +26,7 @@ namespace Front.ASPX
         public const string MessageInfo_CatalogNameNull = "栏目名称不能为空";
         public const string MessageInfo_CatalogNameExist = "栏目名称已经存在";
         public const string MessageInfo_AddCatalogError = "添加栏目失败，请联系开发者";
+       
         public const string MessageInfo_ParamCatalogNameNull = "获取栏目名参数失败";
 
 
@@ -36,17 +37,26 @@ namespace Front.ASPX
 
 
         public const string PathClientLogin = "/ASPX/Client/Login.aspx?path_from=";
-        public const string PathClientInfo = "/ASPX/Client/ClientInfo.aspx?client_name=";
+        public const string PathClientInfo = "/ASPX/Client/ClientInfo.aspx?client_name=";        
+        public const string PathClientAdd = "/ASPX/Client/ClientAdd.aspx";
+        public const string PathClientList = "/ASPX/Client/ClientList.aspx";
         public const string PathChangePassword = "/ASPX/Client/ChangePassword.aspx";
-        public const string PathShowPage = "/Article/ShowPageMaster.aspx?articleId=";
-        public const string PathCatalogArticleListPage = "/Article/CatalogArticleListMaster.aspx?catalog_name=";
-        public const string PathEditPage = "/Article/EditPageMaster.aspx?articleId=";
 
+        public const string PathArticleShowPage = "/Article/ShowPageMaster.aspx?articleId=";
+
+        public const string PathCatalogArticleListPage = "/Article/CatalogArticleListMaster.aspx?catalog_name=";
+        public const string PathArticleEditPage = "/Article/EditPageMaster.aspx?articleId=";
+        public const string PathArticleManagementPage = "/Article/ManagementArticleMaster.aspx";
+
+
+        public const string PathCatalogListPage = "/ASPX/Catalog/CatalogList.aspx";
         public const string PathCatalogAddPage = "/ASPX/Catalog/CatalogAdd.aspx";
         public const string PathCatalogAuthorizePage = "/ASPX/Catalog/CatalogAuthorize.aspx?catalog_name=";
+        public const string PathCatalogInfoPage = "/ASPX/Catalog/CatalogInfo.aspx?catalog_name=";
  
 
         public const string PathDefaultPage = "/";
+        public const string PathDefaultPageForSuperAdmin = "/ASPX/DefaultPageForSuperAdmin.aspx";
 
         public const string PathParamNameOfArticleId = "articleId";
         public const string PathParamNameOfCatalogName = "catalog_name";

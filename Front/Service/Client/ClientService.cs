@@ -128,7 +128,13 @@ namespace Front.Service.Client
             this.CleanUserInfo(clients);
             return clients;
         }
-        
+
+        public IList<ClientEntity> GetClientsByCatalogName(string catalog)
+        {
+            IList<ClientEntity> clients = clientDao.GetClientsByCatalogName(catalog);
+            this.CleanUserInfo(clients);
+            return clients;
+        }
 
         private void CleanUserInfo(IList<ClientEntity> clients)
         {
@@ -137,6 +143,6 @@ namespace Front.Service.Client
                 client.CleanUserInfo();
             }
         }
-       
+
     }
 }

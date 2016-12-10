@@ -7,72 +7,81 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace Front.ASPX.Catalog {
+namespace Front.ASPX {
     
     
-    public partial class CatalogInfo {
+    public partial class DefaultPageForSuperAdmin {
         
         /// <summary>
-        /// LabelCatalogName 控件。
+        /// LabelClient 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelCatalogName;
+        protected global::System.Web.UI.WebControls.Label LabelClient;
         
         /// <summary>
-        /// LabelCatalogNameInfo 控件。
+        /// BulletedListClient 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelCatalogNameInfo;
+        protected global::System.Web.UI.WebControls.BulletedList BulletedListClient;
         
         /// <summary>
-        /// LabelClientsForCatalog 控件。
+        /// LabelArticle 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelClientsForCatalog;
+        protected global::System.Web.UI.WebControls.Label LabelArticle;
         
         /// <summary>
-        /// BulletedListClients 控件。
+        /// BulletedListArticle 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.BulletedList BulletedListClients;
+        protected global::System.Web.UI.WebControls.BulletedList BulletedListArticle;
         
         /// <summary>
-        /// LinkButtonCatalogArticles 控件。
+        /// LabelCatalog 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonCatalogArticles;
+        protected global::System.Web.UI.WebControls.Label LabelCatalog;
         
         /// <summary>
-        /// LinlButtonCatalogArticleManagement 控件。
+        /// BulletedListCatalog 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinlButtonCatalogArticleManagement;
+        protected global::System.Web.UI.WebControls.BulletedList BulletedListCatalog;
         
         /// <summary>
-        /// LinkButtonAuthorize 控件。
+        /// LabelDepartment 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonAuthorize;
+        protected global::System.Web.UI.WebControls.Label LabelDepartment;
+        
+        /// <summary>
+        /// BulletedListDepartment 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.BulletedList BulletedListDepartment;
     }
 }

@@ -52,8 +52,6 @@ namespace Front.ASPX.Catalog
                             this.CheckBoxListClients.Items.Add(new ListItem(temp_client.RealName, temp_client.Username));
                         }
                     }
-                    
-
                 }
             }
         }
@@ -79,15 +77,8 @@ namespace Front.ASPX.Catalog
             {
                 ClientService service = new ClientService();
                 service.AuthorizeCatalogToClients(catalog, names.ToArray());
-                
-                SSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
-                
-                //IList<ClientEntity> clients = service.GetClientsByUsernames(names.ToArray());
-                //foreach (var client in clients)
-                //{
-                //    client.Catalogs.Add(catalog);
-                //}
-                //service.UpdateClients(clients);
+                Response.Redirect(PageInfo.PathCatalogAddPage);
+                return;                
             }
             
         }

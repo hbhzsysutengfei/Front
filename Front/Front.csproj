@@ -81,6 +81,7 @@
     <Content Include="ASPX\Client\ClientInfo.aspx" />
     <Content Include="ASPX\Client\ClientList.aspx" />
     <Content Include="ASPX\Client\Login.aspx" />
+    <Content Include="ASPX\DefaultPageForSuperAdmin.aspx" />
     <Content Include="Default.aspx" />
     <EmbeddedResource Include="hibernate.cfg.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -455,6 +456,13 @@
     </Compile>
     <Compile Include="ASPX\Client\ClientList.aspx.designer.cs">
       <DependentUpon>ClientList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ASPX\DefaultPageForSuperAdmin.aspx.cs">
+      <DependentUpon>DefaultPageForSuperAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ASPX\DefaultPageForSuperAdmin.aspx.designer.cs">
+      <DependentUpon>DefaultPageForSuperAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="ASPX\PageInfo.cs" />
     <Compile Include="ASPX\Client\Login.aspx.cs">

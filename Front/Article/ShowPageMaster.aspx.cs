@@ -86,7 +86,7 @@ namespace Front.Article
             {
                 if (article.Author.Username.Equals(client.Username))
                 {
-                    Response.Redirect(PageInfo.PathEditPage + articleId);
+                    Response.Redirect(PageInfo.PathArticleEditPage + articleId);
                     return;
                 }
                 else
@@ -97,7 +97,7 @@ namespace Front.Article
             }
             else if(client.Role.RoleName.Equals(PageInfo.RoleTypeSuperAdmin))
             {
-                Response.Redirect(PageInfo.PathEditPage + articleId);
+                Response.Redirect(PageInfo.PathArticleEditPage + articleId);
                 return;
             }
 

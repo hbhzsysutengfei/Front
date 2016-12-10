@@ -281,7 +281,7 @@ namespace Front.Article
             switch (e.CommandName)
             {
                 case ButtonCommandNameView:
-                    Response.Redirect(PageInfo.PathShowPage + this.GridViewArticle.Rows[rowIndex].Cells[2].Text);  
+                    Response.Redirect(PageInfo.PathArticleShowPage + this.GridViewArticle.Rows[rowIndex].Cells[2].Text);  
                     break;
                 case ButtonCommandNameDelete:
                     DeleteArticle(this.GridViewArticle.Rows[rowIndex].Cells[2].Text);

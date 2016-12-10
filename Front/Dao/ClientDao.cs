@@ -140,5 +140,13 @@ namespace Front.Dao
             }
             tx.Commit();
         }
+
+        public IList<ClientEntity> GetClientsByCatalogName(string catalog)
+        {
+            IList<ClientEntity> clients = session.QueryOver<ClientEntity>()
+                                            .JoinQueryOver<CatalogEntity>(c => c.Catalogs)
+                                            .Where(p => p.CatalogName == catalog).List();
+            return clients;
+        }
     }
 }

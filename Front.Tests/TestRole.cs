@@ -112,5 +112,11 @@ namespace Front.Tests
             string[] stts = strs.ToArray();
             
         }
+
+        [TestMethod]
+        public void TestGetClientsByCatalogName()
+        {
+            IList<ClientEntity> clients = new ClientDao().GetClientsByCatalogName("test cata");            
+        }
     }
 }
