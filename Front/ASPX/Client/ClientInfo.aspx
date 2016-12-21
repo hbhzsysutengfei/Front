@@ -29,7 +29,7 @@
         <asp:Label ID="LabelCatalog" runat="server" Text="栏目:"></asp:Label>
         <asp:BulletedList ID="BulletedListCatalog" DisplayMode="HyperLink" runat="server">
         </asp:BulletedList>
-        <asp:LinkButton ID="LinkButtonManagementCatalog" Visible="False" Text="栏目" OnClick="LinkButtonManagementCatalog_Click" runat="server" Enabled="False"></asp:LinkButton>
+        <asp:LinkButton ID="LinkButtonManagementCatalog" Visible="False" Text="栏目管理" OnClick="LinkButtonManagementCatalog_Click" runat="server" Enabled="False"></asp:LinkButton>
 
         <br />
     </div>

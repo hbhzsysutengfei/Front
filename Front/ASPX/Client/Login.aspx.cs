@@ -67,7 +67,7 @@ namespace Front.ASPX.User
                 {
                     if (pathFrom == null || pathFrom.Length == 0)
                     {
-                        Response.Redirect(PageInfo.PathDefaultPage);
+                        Response.Redirect(PageInfo.PathDefaultPageForSuperAdmin);
                     }
                     else
                     {

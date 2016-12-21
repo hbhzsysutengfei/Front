@@ -26,7 +26,7 @@ namespace Front
         {
             if(this.linkButtonLogin.Text.Equals(PageInfo.ASPXPageTextLogin))
             {
-                Response.Redirect(PageInfo.PathClientLogin+Request.Url.ToString());
+                Response.Redirect(PageInfo.PathClientLogin);
             }
             else
             {

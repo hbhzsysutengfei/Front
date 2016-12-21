@@ -31,22 +31,31 @@ namespace Front.ASPX.Catalog {
         protected global::System.Web.UI.WebControls.Label LabelCatalogNameInfo;
         
         /// <summary>
-        /// LabelClientsForCatalog 控件。
+        /// LinkButtonClientsForCatalog 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelClientsForCatalog;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButtonClientsForCatalog;
         
         /// <summary>
-        /// BulletedListClients 控件。
+        /// LinkButtonDeleteClientForCatalog 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.BulletedList BulletedListClients;
+        protected global::System.Web.UI.WebControls.LinkButton LinkButtonDeleteClientForCatalog;
+        
+        /// <summary>
+        /// LinkButtonAuthorizeClientToCatalog 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LinkButtonAuthorizeClientToCatalog;
         
         /// <summary>
         /// LinkButtonCatalogArticles 控件。
@@ -67,12 +76,75 @@ namespace Front.ASPX.Catalog {
         protected global::System.Web.UI.WebControls.LinkButton LinlButtonCatalogArticleManagement;
         
         /// <summary>
-        /// LinkButtonAuthorize 控件。
+        /// PanelValidClients 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButtonAuthorize;
+        protected global::System.Web.UI.WebControls.Panel PanelValidClients;
+        
+        /// <summary>
+        /// BulletedListClients 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.BulletedList BulletedListClients;
+        
+        /// <summary>
+        /// PanelDeleteClientForCatalog 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelDeleteClientForCatalog;
+        
+        /// <summary>
+        /// CheckBoxListValidUser 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListValidUser;
+        
+        /// <summary>
+        /// ButtonDeleteClientForCatalog 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonDeleteClientForCatalog;
+        
+        /// <summary>
+        /// PanelAuthorizeClientToCatalog 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelAuthorizeClientToCatalog;
+        
+        /// <summary>
+        /// CheckBoxListAddClient 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxListAddClient;
+        
+        /// <summary>
+        /// BottonAuthorizeClientToCatalog 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BottonAuthorizeClientToCatalog;
     }
 }

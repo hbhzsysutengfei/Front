@@ -1,4 +1,5 @@
 ﻿using Front.ASPX;
+using Front.ASPX.Catalog;
 using Front.Model;
 using Front.Service;
 using System;
@@ -22,28 +23,28 @@ namespace Front
 
                 foreach (var article in articles)
                 {
-                    switch (article.Catalog.CatalogName)
+                    switch (article.Catalog.CatalogLoc)
                     {
-                        case PageInfo.CatalogFirst:
-                            this.BulletedListFirst.Items.Add(new ListItem(article.Title + "   " + article.UpdateTime.ToString(), PageInfo.PathArticleShowPage + article.Id));
+                        case CatalogHelper.CatalogMainBodyLoc.LocMainBodyFirst:
+                            this.BulletedListFirst.Items.Add(new ListItem(article.Title +   "   " + article.UpdateTime.ToLocalTime(), PageInfo.PathArticleShowPage + article.Id));
                             break;
-                        case PageInfo.CatalogSecond:
-                            this.BulletedListSecond.Items.Add(new ListItem(article.Title + "   " + article.UpdateTime.ToString(), PageInfo.PathArticleShowPage + article.Id));
+                        case CatalogHelper.CatalogMainBodyLoc.LocMainBodySecond:
+                            this.BulletedListSecond.Items.Add(new ListItem(article.Title +  "   " + article.UpdateTime.ToString(), PageInfo.PathArticleShowPage + article.Id));
                             break;
-                        case PageInfo.CatalogThird:
-                            this.BulletedListThird.Items.Add(new ListItem(article.Title + "   " + article.UpdateTime.ToString(), PageInfo.PathArticleShowPage + article.Id));
+                        case CatalogHelper.CatalogMainBodyLoc.LocMainBodyThird:
+                            this.BulletedListThird.Items.Add(new ListItem(article.Title +   "   " + article.UpdateTime.ToString(), PageInfo.PathArticleShowPage + article.Id));
                             break;
-                        case PageInfo.CatalogForth:
-                            this.BulletedListForth.Items.Add(new ListItem(article.Title + "   " + article.UpdateTime.ToString(), PageInfo.PathArticleShowPage + article.Id));
+                        case CatalogHelper.CatalogMainBodyLoc.LocMainBodyForth:
+                            this.BulletedListForth.Items.Add(new ListItem(article.Title +   "   " + article.UpdateTime.ToString(), PageInfo.PathArticleShowPage + article.Id));
                             break;
                         default:
                             break;
                     }
                 }
-                this.LabelCatalogFirst.Text = PageInfo.CatalogFirst;
-                this.LabelCatalogSecond.Text = PageInfo.CatalogSecond;
-                this.LabelCatalogThird.Text = PageInfo.CatalogThird;
-                this.LabelCatalogForth.Text = PageInfo.CatalogForth;
+                this.LabelCatalogFirst.Text     =   PageInfo.CatalogsForMainBody[0];
+                this.LabelCatalogSecond.Text    =   PageInfo.CatalogsForMainBody[1];
+                this.LabelCatalogThird.Text     =   PageInfo.CatalogsForMainBody[2];
+                this.LabelCatalogForth.Text     =   PageInfo.CatalogsForMainBody[3];
             }
         }
 
@@ -56,22 +57,22 @@ namespace Front
 
         protected void LinkButtonCatalogFirst_Click(object sender, EventArgs e)
         {
-            Response.Redirect(PageInfo.PathCatalogArticleListPage + PageInfo.CatalogFirst);
+            Response.Redirect(PageInfo.PathCatalogArticleListPage + this.LabelCatalogFirst.Text);
         }
 
         protected void LinkButtonCatalogSecond_Click(object sender, EventArgs e)
         {
-            Response.Redirect(PageInfo.PathCatalogArticleListPage + PageInfo.CatalogSecond);
+            Response.Redirect(PageInfo.PathCatalogArticleListPage + this.LabelCatalogSecond.Text);
         }
 
         protected void LinkButtonCatalogThird_Click(object sender, EventArgs e)
         {
-            Response.Redirect(PageInfo.PathCatalogArticleListPage + PageInfo.CatalogThird);
+            Response.Redirect(PageInfo.PathCatalogArticleListPage + this.LabelCatalogThird.Text);
         }
 
         protected void LinkButtonCatalogForth_Click(object sender, EventArgs e)
         {
-            Response.Redirect(PageInfo.PathCatalogArticleListPage + PageInfo.CatalogForth);
+            Response.Redirect(PageInfo.PathCatalogArticleListPage + this.LabelCatalogForth.Text);
         }
 
         

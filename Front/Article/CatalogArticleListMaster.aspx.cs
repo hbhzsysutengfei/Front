@@ -21,6 +21,7 @@ namespace Front.Article
             {                
                 if (CatalogName == null || CatalogName.Length == 0)
                 {
+                    Response.Redirect(PageInfo.PathDefaultPage);
                     return;
                 }
                 else

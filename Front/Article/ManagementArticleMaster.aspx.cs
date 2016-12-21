@@ -26,34 +26,7 @@ namespace Front.Article
         
         //private string author;
         protected void Page_Load(object sender, EventArgs e)
-        {
-
-            ///for test code without the client limitation
-            //if (!IsPostBack)
-            //{
-            //    InitCatalogForSuperAdmin(); //all catalog
-            //    ArticleService service = new ArticleService();
-            //    IList<ArticleEntity> articles = this.getArticlesForSuperAdmin(service, null, 0, PageSize, true);
-
-            //    this.PageCount = getPageCount();
-            //    this.CurrentPage = 1;
-            //    this.setDropDownListPageNumber();
-            //    this.PageState();
-            //    ds = new DataSet();
-            //    setArticlesToGridView(articles);
-            //    this.GridViewArticle.DataSource = ds.Tables[TableName];
-            //    this.GridViewArticle.DataBind();
-                     
-            //}
-            //for (int i = 0; i < this.GridViewArticle.Rows.Count; i++)
-            //{
-            //    string a = this.GridViewArticle.Rows[i].Cells.ToString();
-            //    for (int j = 0; j < this.GridViewArticle.Rows[i].Cells.Count; j++)
-            //    {
-            //        string b = this.GridViewArticle.Rows[i].Cells[j].Text;
-            //    }
-            //}
-
+        { 
             if (!IsPostBack)
             {
                 ClientEntity client = Session[PageInfo.SessionKey_Client] as ClientEntity;
@@ -103,60 +76,6 @@ namespace Front.Article
                 }
                
             }
-
-
-            
-           
-                
-
-                //ClientEntity client = Session[PageInfo.SessionKey_Client] as ClientEntity;
-                //if (client == null)
-                //{                   
-                //    Response.Redirect(PageInfo.PathClientLogin);
-                //    return;
-                //}
-                //else if (client.Role.RoleName.Equals(PageInfo.RoleTypeClient))
-                //{
-                //    Response.Write("<script>alert('" + PageInfo.MessageBox_NoAdministration + "')</script>");
-                //    Response.Redirect(PageInfo.PathDefaultPage);
-
-                //    return;
-                //}
-                //else if (client.Role.RoleName.Equals(PageInfo.RoleTypeAdmin))
-                //{
-                //    //fill the catalog 
-                //    foreach (var catalog in client.Catalogs)
-                //    {
-                //        this.DropDownListCatalog.Items.Add(new ListItem(catalog.CatalogName));
-                //    }
-                //    this.DropDownListCatalog.SelectedIndex = 0;
-
-                //    ArticleService service = new ArticleService();
-                //    IList<ArticleEntity> articles = this.getArticlesForAdmin(service, client.Username, null, 0, PageSize, true);
-
-
-                //    this.PageCount = getPageCount();
-                //    this.CurrentPage = 1;
-                //    this.setDropDownListPageNumber();
-                //    this.PageState();
-
-                    
-
-                //    setArticlesToGridView(articles);
-                //}
-                //else if (client.Role.RoleName.Equals(PageInfo.RoleTypeSuperAdmin) )
-                //{
-                //    InitCatalogForSuperAdmin(); //all catalog
-                //    ArticleService service = new ArticleService();
-                //    IList<ArticleEntity> articles = this.getArticlesForSuperAdmin(service, null, 0, PageSize, true);
-
-                //    this.PageCount = getPageCount();
-                //    this.CurrentPage = 1;
-                //    this.setDropDownListPageNumber();
-                //    this.PageState();
-                //    setArticlesToGridView(articles);
-                //}
-           
         }
 
         private void InitCatalogForSuperAdmin()
@@ -301,7 +220,7 @@ namespace Front.Article
 
         protected void DropDownListCatalog_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //unfinished
         }
         
     }

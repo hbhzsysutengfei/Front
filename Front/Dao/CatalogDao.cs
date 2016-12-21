@@ -1,4 +1,6 @@
-﻿using Front.Model;
+﻿using Front.ASPX;
+using Front.ASPX.Catalog;
+using Front.Model;
 using NHibernate;
 using System;
 using System.Collections.Generic;
@@ -7,7 +9,7 @@ using System.Web;
 
 namespace Front.Dao
 {
-    public class CatalogDao:DataDao
+    public class CatalogDao : DataDao
     {
 
         public CatalogDao()
@@ -17,7 +19,7 @@ namespace Front.Dao
 
         public string save(CatalogEntity catalog)
         {
-            ITransaction tx =  session.BeginTransaction();
+            ITransaction tx = session.BeginTransaction();
             string generateId = session.Save(catalog) as string;
             tx.Commit();
             //session.Close();
@@ -27,7 +29,8 @@ namespace Front.Dao
         public void save(CatalogEntity[] catalogs)
         {
             ITransaction tx = session.BeginTransaction();
-            foreach(var catalog in catalogs){
+            foreach (var catalog in catalogs)
+            {
                 session.Save(catalog);
             }
             tx.Commit();
@@ -52,6 +55,25 @@ namespace Front.Dao
         {
             IList<CatalogEntity> list = session.QueryOver<CatalogEntity>().WhereRestrictionOn(c => c.CatalogName).IsIn(names).List();
             return list;
+        }
+
+        public IList<CatalogEntity> getCatalogsForMainPage()
+        {
+            return session.QueryOver<CatalogEntity>()
+                .And(m => m.CatalogLoc >= CatalogHelper.CatalogMainBodyLocStart)
+                .And(m => m.CatalogLoc <= CatalogHelper.CatalogMainBodyLocEnd)
+                .OrderBy(c => c.CatalogLoc).Asc.List();
+        }
+
+        public void DeleteCatalogByName(string catalog_name)
+        {
+            ITransaction tx = session.BeginTransaction();
+            CatalogEntity catalog = this.get(catalog_name);
+            if (catalog != null)
+            {
+                session.Delete(catalog);
+            }            
+            tx.Commit();
         }
     }
 }

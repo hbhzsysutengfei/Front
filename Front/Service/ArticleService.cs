@@ -36,7 +36,7 @@ namespace Front.Service
         public IList<ArticleEntity> getArticleForMainPage()
         {
             IList<ArticleEntity> list = new List<ArticleEntity>();
-            foreach (var catalog in PageInfo.CatalogForMainPage)
+            foreach (var catalog in PageInfo.CatalogsForMainBody)
             {
                 var articleList = dao.getArticleListByCatalog(catalog);
                 foreach (var article in articleList)

@@ -41,7 +41,7 @@
             <asp:LinkButton ID="LinkButtonCatalogFirst" runat="server" Text="更多" CssClass="linkbutton" OnClick="LinkButtonCatalogFirst_Click" BorderStyle="Dashed"></asp:LinkButton>
             
             <asp:BulletedList ID="BulletedListFirst" runat="server" DisplayMode="HyperLink"  Height="84%" style="margin-top: 36px" Width="89%" CssClass="bulletedlist" BorderColor="#33CCCC" BorderStyle="Dotted">
-                <asp:ListItem Value="/Article/ShowPageMaster.aspx?articleId=200603f0314a47709d6ee1e47dbbf1aa" Text="PageNotFound"></asp:ListItem>
+                
             </asp:BulletedList>
             
         </div>
@@ -51,7 +51,7 @@
             <asp:LinkButton ID="LinkButtonCatalogSecond" runat="server" Text="更多" CssClass="linkbutton"  OnClick="LinkButtonCatalogSecond_Click" BorderStyle="Dashed"></asp:LinkButton>
             
             <asp:BulletedList ID="BulletedListSecond" runat="server" DisplayMode="HyperLink"  Height="84%" style="margin-top: 36px" Width="89%" CssClass="bulletedlist" BorderColor="#33CCCC" BorderStyle="Dotted">
-                <asp:ListItem Value="https://www.baidu.com" Text="baidu"></asp:ListItem>
+               
             </asp:BulletedList>  
         </div>
        
@@ -61,7 +61,7 @@
             <asp:LinkButton ID="LinkButtonCatalogThird" runat="server" Text="更多" CssClass="linkbutton" OnClick="LinkButtonCatalogThird_Click"  BorderStyle="Dashed"></asp:LinkButton>
             
             <asp:BulletedList ID="BulletedListThird" runat="server" DisplayMode="HyperLink"  Height="84%" style="margin-top: 36px" Width="89%" CssClass="bulletedlist" BorderColor="#33CCCC" BorderStyle="Dotted">
-                <asp:ListItem Value="https://www.baidu.com" Text="baidu"></asp:ListItem>
+                
             </asp:BulletedList>  
         </div>
         <div class="div_article">
@@ -70,7 +70,7 @@
             <asp:LinkButton ID="LinkButtonCatalogForth" runat="server" Text="更多" CssClass="linkbutton"  OnClick="LinkButtonCatalogForth_Click" BorderStyle="Dashed"> </asp:LinkButton>
             
             <asp:BulletedList ID="BulletedListForth" runat="server" DisplayMode="HyperLink"  Height="84%" style="margin-top: 36px" Width="89%" CssClass="bulletedlist" BorderColor="#33CCCC" BorderStyle="Dotted" >
-                <asp:ListItem Value="https://www.baidu.com" Text="baidu"></asp:ListItem>
+                
             </asp:BulletedList>  
         </div>       
     </div>   

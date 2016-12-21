@@ -30,7 +30,7 @@ namespace Front.ASPX.Catalog
                 }
                 else if (client.Role.RoleName.Equals(PageInfo.RoleTypeSuperAdmin))
                 {
-                    //load all client to the checkboxlist
+                    //load all admin superadmin  client to the checkboxlist
                     string catalogname = Request.Params.Get(PageInfo.PathParamNameOfCatalogName);
                     if (catalogname == null || catalogname.Length == 0)
                     {

@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Front.Model;
 using Front.Dao;
 using Front.ASPX;
+using Front.Service;
 
 namespace Front.Tests
 {
@@ -94,12 +95,46 @@ namespace Front.Tests
         public void TestGetArticleListByCatalog()
         {
             ArticleDao dao = new ArticleDao();
-            IList<ArticleEntity> list =  dao.getArticleListByCatalog(PageInfo.CatalogThird);
+            IList<ArticleEntity> list =  dao.getArticleListByCatalog(PageInfo.CatalogsForMainBody[2]);
             foreach (var article in list)
             {
                 Console.WriteLine(article.Id + "#" + article.Title + "#" + article.UpdateTime.ToString() +"#"+article.Catalog.CatalogName);
             }
 
         }
+
+        [TestMethod]
+        public void TestGetCatalog()
+        {
+            IList<CatalogEntity> catalogs = new CatalogDao().getCatalogsForMainPage();
+        }
+
+
+        [TestMethod]
+        public void TestCasCadeCatalog()
+        {
+            CatalogEntity catalog = new CatalogEntity("test cata for cascade");
+            CatalogDao dao = new CatalogDao();
+            dao.save(catalog);
+
+            ArticleEntity article = new ArticleEntity();
+            article.Author = new ClientDao().getClientByUsername("admin");
+            article.Catalog = new CatalogDao().get(catalog.CatalogName);
+            article.Title = "test title";
+            article.Content = "test content";
+
+            ArticleDao articleDao  = new ArticleDao();
+            articleDao.save(article);
+        }
+        [TestMethod]
+        public void TestDeleteCatalog() 
+        {
+            CatalogService service = new CatalogService();
+            service.DeleteCatalog("test cata for cascade");
+        }
+
+
+
+
     }
 }

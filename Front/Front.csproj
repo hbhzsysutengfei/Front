@@ -339,6 +339,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Mapping\Article.hbm.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Mapping\Catalog.hbm.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -408,6 +409,7 @@
     <Compile Include="ASPX\Catalog\CatalogAuthorize.aspx.designer.cs">
       <DependentUpon>CatalogAuthorize.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ASPX\Catalog\CatalogHelper.cs" />
     <Compile Include="ASPX\Catalog\CatalogInfo.aspx.cs">
       <DependentUpon>CatalogInfo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

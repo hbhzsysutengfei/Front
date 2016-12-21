@@ -7,6 +7,7 @@
     </id>
 
     <property name="CatalogName" column="catalog_name" not-null ="true" unique="true"/>
+    <property name="CatalogLoc" column="catalog_loc" not-null="true" />
     
     
     

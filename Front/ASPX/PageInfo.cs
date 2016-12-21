@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Front.Model;
+using Front.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -79,20 +81,20 @@ namespace Front.ASPX
         public const string RoleTypeClient = "client";
 
 
-        public const int CatalogLocTop = 0;
-        public const int CatalogLocHeader = 1;
-        public const int CatalogLocNavigator = 2;
-        public const int CatalogLocContent = 3;
+        
 
-        //自己修改
-        public const int CatalogNumForMainPage = 4;
-        public const string CatalogFirst=   "审批";
-        public const string CatalogSecond = "审批1";
-        public const string CatalogThird =  "申请";
-        public const string CatalogForth =  "调研文章";
-        public static string[] CatalogForMainPage = { CatalogFirst, CatalogSecond, CatalogThird, CatalogForth };
+       
+        public readonly static List<string> CatalogsForMainBody;
 
-
+        static PageInfo()
+        {
+            CatalogsForMainBody = new List<string>();
+            IList<CatalogEntity> catalogs = new CatalogService().GetCatalogsForMainPage();
+            foreach(var catalog in catalogs)
+            {
+                CatalogsForMainBody.Add(catalog.CatalogName);
+            }           
+        }
 
         public const int NumberOfArticleForMainPage = 6;
         public const int NumberOfArticleForUserPage = 20;

@@ -100,6 +100,7 @@ namespace Front.Article
             }
             else
             {
+                String txtContent = Request.Form["textEditPage"];
                 ArticleService service = new ArticleService();
                 ArticleEntity article = new ArticleEntity();
                 article.Content = txtContent;

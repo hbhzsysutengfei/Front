@@ -92,7 +92,8 @@ namespace Front.Dao
                     a => a.Id, 
                     a => a.Title,                  
                     a => a.UpdateTime,
-                    a => a.Author).OrderBy(a =>a.UpdateTime).Desc
+                    a => a.Author,
+                    a => a.Catalog).OrderBy(a =>a.UpdateTime).Desc
                 .Skip(pageNumber * getNumber).Take(getNumber).List<object[]>()
                 .Select(
                     props => new ArticleEntity 
@@ -101,7 +102,7 @@ namespace Front.Dao
                         Title = props[1] as string, 
                         UpdateTime = (DateTime)props[2] ,
                         Author = props[3] as ClientEntity,
-                        Catalog=new CatalogEntity(catalog)
+                        Catalog= props[4] as CatalogEntity
                     })
                 .ToList<ArticleEntity>();
            return res;
@@ -171,12 +172,6 @@ namespace Front.Dao
             return session.QueryOver<ArticleEntity>().And(a => a.Author.Username == author).And(a => a.Catalog.CatalogName == catalog).RowCount();
         }
 
-
-
-
-
-        
-
         //////////////////////////////////////////////////////////////////////// 
         ///for test ignore followed
         //////////////////////////////////////
@@ -206,6 +201,13 @@ namespace Front.Dao
         {
             ITransaction tx = session.BeginTransaction();
             session.Delete("from ArticleEntity where Id='" + articleId +"'");
+            tx.Commit();
+        }
+
+        public void DeleteCatalogArticles(string catalog_name)
+        {
+            ITransaction tx = session.BeginTransaction();
+            session.Delete("from ArticleEntity where Catalog='"+ catalog_name+"'");
             tx.Commit();
         }
     }

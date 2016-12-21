@@ -95,7 +95,32 @@ namespace Front.Service.Client
             }
             clientDao.UpdateClients(clients);
         }
+        public void AuthorizeCatalogToClients(string catalog_name, string[] usernames)
+        {
+            CatalogEntity catalog = new CatalogDao().get(catalog_name);
+            this.AuthorizeCatalogToClients(catalog, usernames);
+        }
 
+        public void DeleteClientsForCatalog(string catalog_name, string[] usernames)
+        {
+            CatalogEntity catalog = new CatalogDao().get(catalog_name);
+            if (catalog != null)
+            {
+                DeleteClientsForCatalog(catalog, usernames);
+            }           
+        }
+        public void DeleteClientsForCatalog(CatalogEntity catalog, string[] usernames)
+        {
+            IList<ClientEntity> clients = clientDao.GetClientsByUsernames(usernames);
+            foreach (var client in clients)
+            {
+                if (client.Catalogs.Contains(catalog))
+                {
+                    client.Catalogs.Remove(catalog);
+                }
+            }
+            clientDao.UpdateClients(clients);
+        }
         //public void UpdateClients(IList<ClientEntity> clients)
         //{
         //    clientDao.UpdateClients(clients);

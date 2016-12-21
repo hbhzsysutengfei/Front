@@ -9,11 +9,11 @@
     <property name="Title" column="title" not-null="true"/>
     <property name="Content" column="content" not-null="true"/>
     
-    <many-to-one name="Author" column="author" class="ClientEntity" cascade="save-update" property-ref="Username">
+    <many-to-one name="Author" column="author" class="ClientEntity" property-ref="Username">
       
     </many-to-one>
 
-    <many-to-one name="Catalog" column="catalog" class="CatalogEntity" property-ref="CatalogName">
+    <many-to-one name="Catalog" column="catalog" class="CatalogEntity" property-ref="CatalogName" >
       
     </many-to-one>
     

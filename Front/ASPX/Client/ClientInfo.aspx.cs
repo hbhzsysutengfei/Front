@@ -23,18 +23,19 @@ namespace Front.ASPX.Client
                 }
                 else if (client.Role.RoleName.Equals(PageInfo.RoleTypeClient) || client.Role.RoleName.Equals(PageInfo.RoleTypeAdmin))
                 {
-                    this.InitPageLinkButton(true, true, false);
+                    this.InitPageLinkButton(true, false, false); // only can change client itself password
                     this.FillASPXPageWithClient(client);
                 }
                 else if (client.Role.RoleName.Equals(PageInfo.RoleTypeSuperAdmin))
                 {
                     string client_name = Request.Params.Get(PageInfo.PathParamNameOfClientName);
                     //superadmin view all client by param
+                    
+                    //view oneself when there is without the client_name parma
                     if (client_name == null || client_name.Length == 0)
                     {
-                        this.InitPageLinkButton(true, true, true);
+                        this.InitPageLinkButton(true, true, true); // change password oneself redirect to the changepassword page 
                         this.FillASPXPageWithClient(client);
-
                     }
                     else if (client_name.Length > 0)
                     {
@@ -52,16 +53,17 @@ namespace Front.ASPX.Client
                         }
                     }
                 }
-            }
-            
+            }            
         }
 
         private void InitPageLinkButton(Boolean change, Boolean reset, Boolean catalogManagement)
         {
             this.LinkButtonChangePassword.Enabled = change;
             this.LinkButtonChangePassword.Visible = change;
+
             this.LinkButtonResetPassword.Enabled = reset;
             this.LinkButtonResetPassword.Visible = reset;
+
             this.LinkButtonManagementCatalog.Enabled = catalogManagement;
             this.LinkButtonManagementCatalog.Visible = catalogManagement;
         }

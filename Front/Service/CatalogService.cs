@@ -34,5 +34,21 @@ namespace Front.Service
         {
             return  dao.save(catalog);
         }
+
+        public IList<CatalogEntity> GetCatalogsForMainPage()
+        {
+            return dao.getCatalogsForMainPage();
+        }
+
+        public void DeleteCatalog(string catalog_name)
+        {
+            //delete articles 
+            ArticleDao articleDao = new ArticleDao();
+            articleDao.DeleteCatalogArticles(catalog_name);
+
+            //delete catalog
+            dao.DeleteCatalogByName(catalog_name);
+        }
+
     }
 }
